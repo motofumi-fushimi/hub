@@ -16,9 +16,17 @@ hide:
     padding: 0 !important;
     margin: 0 !important;
   }
+  .iframe-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 </style>
 
-<iframe
-  src="../poster.html"
-  style="width: 100%; aspect-ratio: 841 / 1189; outline: 1px solid #ccc; margin-bottom: 1em;"
-></iframe>
+<div class="iframe-wrapper">
+  <iframe
+    src="../poster.html"
+    style="width: 100%; aspect-ratio: 841 / 1189; outline: 1px solid #ccc; margin-bottom: 1em;"
+　　></iframe>
+</div>
