@@ -9,24 +9,15 @@ hide:
   .md-content__inner {
     margin-left: 0 !important;
     margin-right: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
   }
   .md-content__inner p {
     padding: 0 !important;
     margin: 0 !important;
   }
-  .iframe-wrapper {
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
 </style>
 
-<div class="iframe-wrapper">
-  <iframe
-    src="../poster.html"
-    style="width: 100%; aspect-ratio: 841 / 1189; outline: 1px solid #ccc; margin-bottom: 1em;"
-　　></iframe>
+<iframe
+  src="../poster.html"
+  style="width: 100%; aspect-ratio: 841 / 1189; outline: 1px solid #ccc; margin-bottom: 1em;"
+></iframe>e>
 </div>
