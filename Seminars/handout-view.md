@@ -2,6 +2,6 @@
 title: ハンドアウト テンプレート
 ---
 
-<iframe src="../handout.html" width="100%" height=auto style="border: 1px solid #ccc; margin-bottom: 1em;"></iframe>
+<iframe src="../handout.html" width="100%" aspect-ratio="210/297" style="border: 1px solid #ccc; margin-bottom: 1em;"></iframe>
 
 [▶ 新しいタブで全画面表示](../handout.html){: .md-button .md-button--primary target="_blank" }
