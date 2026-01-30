@@ -47,17 +47,16 @@
 }
 
 .md-header__source {
-  width: auto !important;
-  min-width: 0 !important;
-  max-width: none !important;
+  width: max-content !important;
+  min-width: max-content !important;
   margin-left: 1rem !important;
-  margin-right: 1rem !important;
-  padding-left: auto !important;
-  padding-right: auto !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .md-source {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
   width: auto !important;
   display: flex !important;
   align-items: center !important;
