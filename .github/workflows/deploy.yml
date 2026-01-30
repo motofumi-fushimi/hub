@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # --- 1. 環境セットアップ ---
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -30,32 +29,29 @@ jobs:
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli
 
-      # --- 2. MarpスライドのHTML化処理 ---
-      # 以前と同様、ルート以下のMarkdownを探してHTML化します
+      # --- Marpビルド (HTML生成) ---
       - name: Build Marp Slides
         run: |
           echo "Scanning project root for Marp slides..."
-          find . -type f -name "*.md" -not -path '*/.*' | while read file; do
+          # node_modulesなどを除外しつつ、.mdを探してHTML化
+          find . -type d \( -name "node_modules" -o -name ".git" \) -prune -o -type f -name "*.md" -print | while read file; do
             if grep -q "marp: true" "$file"; then
               echo "Processing slide: $file"
+              # CSSパスはご自身の環境に合わせて修正済みと仮定
               npx @marp-team/marp-cli "$file" --html --allow-local-files --theme-set Assets/Styles/*.css
             fi
           done
 
-      # --- 3. 【重要】ドキュメント用フォルダの準備 ---
-      # ここで docs フォルダを作り、サイトに必要なファイルだけをそこにコピーします。
-      # これにより、MkDocsの「設定ファイルと同じ場所はダメ」というエラーを回避します。
+      # --- ドキュメントフォルダの準備とお掃除 ---
       - name: Prepare Docs Directory
         run: |
           mkdir docs
-
-          # rsyncを使って、除外したいファイル以外をすべて docs にコピーします
+          # 1. 全ファイルを docs にコピー
           rsync -av \
             --exclude='.git*' \
             --exclude='.github*' \
             --exclude='.vscode*' \
             --exclude='node_modules' \
-            --exclude='Local' \
             --exclude='site' \
             --exclude='docs' \
             --exclude='readme.md' \
@@ -63,8 +59,17 @@ jobs:
             --exclude='mkdocs.yml' \
             . docs/
 
-      # --- 4. MkDocsビルド & デプロイ ---
-      # docs の中身を使ってビルドが行われます
+          # 2. 【ここが重要！】Marp用のMarkdown原稿を docs から削除する
+          #    (そうしないとMkDocsが上書きしてしまうため)
+          echo "Removing Marp source files from build directory..."
+          find docs -type f -name "*.md" | while read file; do
+            if grep -q "marp: true" "$file"; then
+              echo "Removing source: $file"
+              rm "$file"
+            fi
+          done
+
+      # --- MkDocsビルド ---
       - name: Build MkDocs Site
         run: mkdocs build
 
