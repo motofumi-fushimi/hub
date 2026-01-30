@@ -3791,41 +3791,49 @@
   /* 1. タイトルを隠す */
   .md-typeset h1 { display: none; }
 
-  /* 2. コンテンツエリアの強力なリセット (website.cssの上書き) */
-  /* html body をつけて優先度を高めています */
-  html body .md-content__inner {
-    /* 左メニューの隣に寄せる */
+  /* 2. 親要素(.md-content)のリセット 【ここが重要！】 */
+  /* これまでここをリセットしていなかったため、中央寄せが残っていました */
+  .md-content {
+    /* 中央寄せ(auto)を解除して左詰めにする */
     margin-left: 0 !important;
-    padding-left: 0 !important;
-
-    /* 右側を親要素（GitHubアイコンのライン）で止める */
     margin-right: 0 !important;
-    padding-right: 0 !important;
 
-    /* 【最重要】幅は「指定しない(auto)」ことで、空きスペースにフィットさせる */
-    width: auto !important;
+    /* 余計なパディングを消す */
+    padding: 0 !important;
+
+    /* 幅の制限をなくす */
     max-width: none !important;
+    width: auto !important;
 
-    /* 万が一のはみ出しをカットする保険 */
-    overflow: hidden !important;
+    /* Flexboxの子供として、余ったスペースを全部埋める設定 */
+    flex-grow: 1 !important;
+    display: block !important;
   }
 
-  /* 3. website.css の pタグ余白を無効化 */
-  html body .md-content__inner p {
+  /* 3. 子要素(.md-content__inner)のリセット */
+  .md-content__inner {
+    /* 親と同じく制限解除 */
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* 4. website.css の pタグの余白(padding: 0 .5em)を無効化 */
+  /* ここが残っていると width:100% と喧嘩してはみ出します */
+  .md-typeset p {
     padding: 0 !important;
     margin: 0 !important;
   }
 
-  /* 4. iframeを入れる箱を用意 */
-  .iframe-container {
-    width: 100%;
-    /* 余計な隙間を排除 */
-    font-size: 0;
-    line-height: 0;
+  /* 5. グリッド自体のはみ出し防止保険 */
+  .md-grid {
+    /* 万が一のために */
+    max-width: var(--md-content-width) !important;
   }
 </style>
 
-<div class="iframe-container">
+<div style="width: 100%; overflow: hidden;">
   <iframe
     src="../slidedeck.html"
     style="
@@ -3833,7 +3841,7 @@
       aspect-ratio: 16 / 9;
       border: none;
       outline: 1px solid #ccc;
-      display: block; /* ブロック要素にして隙間を埋める */
+      display: block;
     "
   ></iframe>
 </div>
