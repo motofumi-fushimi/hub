@@ -1,6 +1,7 @@
 <iframe
   src="../slidedeck.html"
-  style="width: 100%; aspect-ratio: 19 / 9; border: 1px solid #ccc; margin-bottom: 1em;"
+  style="width: 100%; aspect-ratio: 16 / 9; outline: 1px solid #ccc; margin-bottom: 1em;"
+  scrolling="no"
 ></iframe>
 
 [▶ 新しいタブで全画面表示](../slidedeck.html){: .md-button .md-button--primary target="_blank" }
