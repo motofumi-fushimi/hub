@@ -7,10 +7,14 @@ hide:
 <style>
   .md-typeset h1 { display: none; }
   .md-content__inner {
-    margin-left: 0;
-    margin-right: 0;
-    max-width: none;
-    width: auto;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .md-typeset p {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 </style>
 
