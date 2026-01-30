@@ -1,13 +1,18 @@
 ---
+title: スライド テンプレート
 hide:
   - toc
 ---
 
-# スライド テンプレート
+<style>
+  .md-content__inner {
+    margin-left: 0;    /* 左の余白をゼロに（左メニューに寄せる） */
+    margin-right: 0;   /* 右の余白もゼロに */
+    max-width: 100%;   /* 読みやすさのための幅制限を解除して最大化 */
+  }
+</style>
 
-<div style="max-width: 90%; margin: 0 auto;">
-    <iframe
+<iframe
     src="../slidedeck.html"
     style="width: 100%; aspect-ratio: 16 / 9; outline: 1px solid #ccc; margin-bottom: 1em;"
-    ></iframe>
-</div>
+></iframe>
