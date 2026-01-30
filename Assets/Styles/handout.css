@@ -1,0 +1,392 @@
+/*!
+ * @theme handout
+ * @author Motofumi Fushimi
+ *
+ * @auto-scaling true
+ */
+
+@import '~github-markdown-css';
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:regular,bold,italic,boldItalic|Noto+Serif+JP:regular,bold|Noto+Emoji');
+
+:root {
+    --normal-size: 10.0878pt; /* 11pt option of LaTeX Beamer */
+    --text-color: #1A1A1A; /* Default text color */
+    --paper-color: #ffffff; /* Default paper color */
+    --structure-color: #001E62; /* Keio blue */
+    --alert-color: #C63527; /* Keio red */
+    --comment-color: #F1C400; /* Keio yellow */
+}
+
+section {
+    display: block;
+    height: 297mm; /* A4 */
+    width: 210mm; /* A4 */
+    place-content: safe center center;
+    align-content: start;
+    font-family: "Noto Serif JP", "Noto Serif", "Noto Emoji";
+    font-size: var(--normal-size);
+    color: var(--text-color);
+    background-color: var(--paper-color);
+
+    /* Definitions for classic behavior: Users can adopt flex centering by tweaking style `section { display: flex }` */
+    flex-flow: column nowrap;
+    align-items: stretch;
+
+    > *:last-child,
+    &[data-footer] > :nth-last-child(2) {
+        margin-bottom: 0;
+    }
+}
+
+/* Comment pages */
+section.comment {
+    color: var(--comment-color);
+}
+section.comment ul {
+    margin-top: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+/* Author, affiliation, conference */
+.author, .affiliation, .conference {
+    text-align: center;
+    padding-top: 0rem;
+    padding-bottom: .5rem;
+}
+.author {
+    font-size: 1rem;
+}
+.affiliation, .conference {
+    font-size: 1rem;
+}
+
+.columns {
+  display: flex;
+}
+.columns .single {
+    flex: 1;
+    margin-left: 4mm;
+    margin-right: 4mm;
+    border-radius: 2mm;
+}
+.columns .left {
+    flex: 1;
+    margin-left: 4mm;
+    margin-right: 2mm;
+    border-radius: 2mm;
+}
+.columns .right {
+    flex: 1;
+    margin-left: 2mm;
+    margin-right: 4mm;
+    border-radius: 2mm;
+}
+
+.header-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 12mm;
+}
+.header-box::before {
+  content: "";
+  width: 100%;
+  height: 4mm;
+  border-bottom-left-radius: 4mm;
+  border-bottom-right-radius: 4mm;
+}
+.header-box::after {
+  content: "";
+  width: 100%;
+  height: 8mm;
+  border-top-left-radius: 8mm;
+  border-top-right-radius: 8mm;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    margin: 0;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Sections */
+h2 {
+    margin-top: .25rem;
+    margin-bottom: .5rem;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    border-radius: 4mm;
+    border-bottom-left-radius: 0mm;
+    border-bottom-right-radius: 0mm;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Subsections */
+h3 {
+    margin-top: 0rem;
+    margin-bottom: .25rem;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* --- h2 (第1レベルの節番号: 1, 2, 3, ...) --- */
+h2 {
+    counter-increment: section;
+    counter-reset: subsection sub_subsection;
+}
+h2::before {
+    content: counter(section) ".\a0";
+}
+
+/* --- h3 (第2レベルの節番号: 1.1, 1.2, 2.1, ...) --- */
+h3 {
+    counter-increment: subsection;
+    counter-reset: sub_subsection;
+}
+h3::before {
+    content: counter(section) "." counter(subsection) ".\a0";
+}
+
+/* --- h4 (第3レベルの節番号: 1.1.1, 1.1.2, 2.2.1, ...) --- */
+h4 {
+    counter-increment: sub_subsection;
+    counter-reset: sub_sub_subsection; /* 必要に応じてさらに下のレベルもリセット */
+}
+h4::before {
+    content: counter(section) "." counter(subsection) "." counter(sub_subsection) ".\a0";
+}
+
+/* Paragraphs */
+p {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    line-height: 1.25;
+    text-indent: 1em;
+}
+
+/* Multi-column contents */
+.flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 1mm;
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
+
+/* Subscripts and superscripts */
+sub, sup {
+    line-height: 0;
+}
+
+/* Lists */
+ul, ol {
+    margin-top: 0ex;
+    margin-bottom: .5ex;
+    margin-left: .5em;
+    line-height: 1.25;
+}
+ul li::marker, ol li::marker {
+  font-weight: bold;
+  color: var(--structure-color);
+}
+li {
+    margin-top: 0ex;
+    margin-bottom: .5ex;
+}
+ul ul, ol ol {
+    margin-top: .5ex;
+}
+
+/* Tables */
+table {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-top-style: solid;
+    border-top-width: .25mm;
+    border-top-color: var(--text-color);
+    border-bottom-style: solid;
+    border-bottom-width: .25mm;
+    border-bottom-color: var(--text-color);
+    table-layout: fixed;
+    display: table;
+}
+thead th {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    padding-left: 2mm;
+    padding-right: 2mm;
+    border-bottom-style: solid;
+    border-bottom-width: .25mm;
+    border-bottom-color: var(--text-color);
+    text-align: center;
+    color: var(--structure-color);
+    background-color: var(--box-color);
+}
+tbody tr:nth-child(2n+1) {
+    background: var(--paper-color);
+}
+tbody tr:nth-child(2n) {
+    background: var(--middle-color);
+}
+tbody td {
+    padding-left: 2mm;
+    padding-right: 2mm;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Quotes */
+blockquote {
+    text-align: center;
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    margin-left: 8mm;
+    margin-right: 8mm;
+    padding-top: 1ex;
+    padding-bottom: .25ex;
+    border-radius: 4mm;
+    background-color: var(--box-color);
+}
+
+/* Equations */
+mjx-container[display="true"] {
+    padding-top: 1ex;
+    padding-bottom: .25ex;
+    font-size: 1.1rem;
+}
+.katex {
+    padding-top: 1ex;
+    padding-bottom: .25ex;
+    font-size: 1.1rem;
+}
+
+/* Emphasized contents */
+em {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--structure-color);
+}
+strong {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--alert-color);
+}
+
+/* Italics */
+i {
+    font-family: "Noto Serif";
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+/* Links */
+a {
+    /* text-decoration: none; */
+    text-decoration: underline;
+}
+
+/* Images and videos */
+img, video {
+    background-color: transparent;
+}
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Codes */
+code {
+    padding: 0mm;
+    font-family: "Roboto Mono", "Noto Serif JP", "Noto Emoji";
+    color: var(--text-color);
+    background-color: var(--middle-color);
+}
+pre {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    margin-left: 4mm;
+    margin-right: 4mm;
+    padding-top: .5ex;
+    padding-bottom: .5ex;
+    padding-left: 2mm;
+    padding-right: 2mm;
+    border-radius: 2mm;
+    background-color: var(--box-color);
+    line-height: 1.25;
+    tab-size: 4;
+    overflow: visible;
+    color: var(--text-color);
+    background-color: var(--paper-color);
+    border: .25mm solid var(--text-color);
+}
+pre code {
+    tab-size: 4;
+    color: var(--text-color);
+    background: none;
+}
+.hljs-keyword {
+    color: #0e00ff;
+}
+.hljs-string {
+    color: #a709f5;
+}
+.hljs-comment {
+    color: #008013;
+    font-style: normal;
+}
+
+/* Citations */
+cite {
+    font-style: normal;
+    font-weight: normal;
+    font-size: .75rem;
+    color: var(--text-color);
+}
+
+/* Captions */
+figcaption {
+    caption-side: bottom;
+    margin-right: 4mm;
+    margin-left: 4mm;
+    margin-bottom: 1ex;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: .75rem;
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 4mm;
+    right: 4mm;
+    width: 100%;
+    text-align: right;
+    font-size: smaller;
+}

@@ -1,0 +1,398 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* 研究室用に改変
+元ファイルは%LOCALAPPDATA%/Programs/Microsoft VS Code/resources/app/extensions/markdown-language-features/media/markdown.css */
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:bold,boldItalic|Noto+Serif:regular,italic|Roboto+Mono:regular|Noto+Sans+JP:regular,bold|Noto+Serif+JP:medium,bold|Noto+Emoji');
+
+:root {
+  --normal-size: 10.0878pt; /* 11pt option of LaTeX Beamer */
+  --text-color: #1a1a1a; /* Default text color */
+  --box-color: #E6E6E6; /* Default box color */
+  --middle-color: #F3F3F3; /* Intermediate box color */
+  --paper-color: #ffffff; /* Default paper color */
+  --structure-color: #001E62; /* Keio blue */
+  --alert-color: #C63527; /* Keio red */
+  --comment-color: #F1C400; /* Keio yellow */
+}
+
+html, body {
+    font-family: "Noto Serif JP", "Noto Serif", "Noto Emoji";
+    font-size: var(--markdown-font-size, 14px);
+    padding: 0 26px;
+    padding-top: 1em;
+    line-height: var(--markdown-line-height, 22px);
+    word-wrap: break-word;
+    color: var(--text-color);
+    background-color: var(--paper-color);
+    counter-reset: section;
+}
+
+#code-csp-warning {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: white;
+    margin: 16px;
+    text-align: center;
+    font-size: 12px;
+    font-family: sans-serif;
+    background-color: #444444;
+    cursor: pointer;
+    padding: 6px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+}
+#code-csp-warning:hover {
+    text-decoration: none;
+    background-color: #007acc;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+}
+
+body.scrollBeyondLastLine {
+    margin-bottom: calc(100vh - 22px);
+}
+body.showEditorSelection .code-line {
+    position: relative;
+}
+body.showEditorSelection :not(tr, ul, ol).code-active-line:before,
+body.showEditorSelection :not(tr, ul, ol).code-line:hover:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -12px;
+    height: 100%;
+}
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+    left: -30px;
+}
+.vscode-light.showEditorSelection .code-active-line:before,
+.vscode-dark.showEditorSelection .code-active-line:before,
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+    border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+.vscode-light.showEditorSelection .code-line:hover:before,
+.vscode-dark.showEditorSelection .code-line:hover:before,
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+    border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+/* Author, affiliation */
+.author, .affiliation, .date {
+    text-align: right;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    color: var(--text-color);
+}
+.author, .affiliation, .date {
+    font-size: 1rem;
+}
+
+
+.vscode-light h1, .vscode-dark h1, .vs-code-high-contrast h1 {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .5ex;
+    padding-bottom: .5ex;
+    font-size: 1.5em;
+    font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji";
+    color: var(--paper-color);
+    background-color: var(--structure-color);
+}
+
+.vscode-light h2, .vscode-dark h2, .vs-code-high-contrast h2 {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .5ex;
+    padding-bottom: .5ex;
+    border-left-style: solid;
+    border-left-width: .5em;
+    border-left-color: var(--structure-color);
+    border-bottom-style: solid;
+    border-bottom-width: .25ex;
+    border-bottom-color: var(--structure-color);
+    font-size: 1.5em;
+    font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji";
+    color: var(--structure-color);
+    background-color: var(--paper-color);
+
+}
+
+.vscode-light h3, .vscode-dark h3, .vs-code-high-contrast h3 {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-left: .25em;
+    padding-right: .25em;
+    padding-top: .25ex;
+    padding-bottom: .25ex;
+    border-left-style: solid;
+    border-left-width: .25em;
+    border-left-color: var(--structure-color);
+    border-bottom-width: 0ex;
+    font-size: 1.25em;
+    font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji";
+    color: var(--structure-color);
+}
+
+.vscode-light h4, .vscode-dark h4, .vs-code-high-contrast h4 {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .25ex;
+    padding-bottom: .25ex;
+    font-size: 1em;
+    font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji";
+    color: var(--structure-color);
+}
+
+.vscode-light h5, .vscode-dark h5, .vs-code-high-contrast h5 {
+    margin-top: .5ex;
+    margin-bottom: .5ex;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .25ex;
+    padding-bottom: .25ex;
+    font-size: 1em;
+    color: var(--structure-color);
+}
+
+.vscode-light hr, .vscode-dark hr, .vscode-high-contrast hr {
+    border-style: dashed;
+    border-color: gray;
+}
+
+/* Multi-column contents */
+.flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 1mm;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+/* Paragraphs */
+p {
+    margin-top: 0ex;
+    margin-bottom: .5ex;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: 0ex;
+    padding-bottom: 0ex;
+}
+
+/* Subscripts and superscripts */
+sub, sup {
+    line-height: 0;
+}
+
+/* Lists */
+ul, ol {
+    margin-top: 0ex;
+    margin-bottom: .25ex;
+}
+ul ul:first-child, ul ol:first-child,
+ol ul:first-child, ol ol:first-child {
+    margin-top: .25ex;
+}
+ul ul:last-child, ul ol:last-child,
+ol ul:last-child, ol ol:last-child {
+    margin-bottom: .25ex;
+}
+
+/* Tables */
+table {
+    margin-top: .5ex;
+    margin-bottom: .5ex;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-top-style: solid;
+    border-top-width: .25mm;
+    border-top-color: var(--text-color);
+    border-bottom-style: solid;
+    border-bottom-width: .25mm;
+    border-bottom-color: var(--text-color);
+    table-layout: fixed;
+    display: table;
+}
+thead th {
+    padding-top: .25ex;
+    padding-bottom: .25ex;
+    padding-left: 2mm;
+    padding-right: 2mm;
+    border-bottom-style: solid;
+    border-bottom-width: .25mm;
+    border-bottom-color: var(--text-color);
+    text-align: center;
+    font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji";
+    color: var(--structure-color);
+    background-color: var(--box-color);
+}
+/* table>tbody>tr+tr>td {
+    border-top: 1px solid;
+} */
+tbody tr:nth-child(2n+1) {
+    background: var(--paper-color);
+}
+tbody tr:nth-child(2n) {
+    background: var(--box-color);
+}
+.vscode-light th, .vscode-dark th, .vscode-high-contrast th {
+    border-color: var(--text-color);
+    text-align: left;
+    border-bottom: 1px solid;
+    font-weight: bold;
+}
+tbody td {
+    padding-left: 2mm;
+    padding-right: 2mm;
+    padding-top: .25ex;
+    padding-bottom: .25ex;
+    text-align: center;
+    font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji";
+    color: var(--text-color);
+}
+
+/* Emphasized contents */
+em {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--structure-color);
+}
+strong {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--alert-color);
+}
+
+/* Italics */
+i {
+    font-family: "Noto Sans Regular";
+    /* font-size: 1.0rem; */
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Links */
+a {
+    /* text-decoration: underline; */
+    text-decoration: underline;
+}
+a:focus, input:focus, select:focus, textarea:focus {
+    outline: 1px solid -webkit-focus-ring-color;
+    outline-offset: -1px;
+}
+
+/* Images and videos */
+img, video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Quotes */
+blockquote {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    margin-left: 2mm;
+    margin-right: 2mm;
+    padding-top: .5ex;
+    padding-bottom: .25ex;
+    border-radius: 0mm;
+    border-left-width: .25em;
+    border-left-style: solid;
+    border-left-color: var(--structure-color);
+    border-right-width: .25em;
+    border-right-style: solid;
+    border-right-color: var(--box-color);
+    background-color: var(--box-color);
+}
+
+/* Equations */
+mjx-container[display="true"] {
+    padding-top: 1ex;
+    padding-bottom: 1ex;
+    font-size: 1.1em;
+}
+.katex {
+    padding-top: 1ex;
+    padding-bottom: 1ex;
+    font-size: 1.1em;
+}
+
+/* Codes */
+code {
+    padding-top: 0ex;
+    padding-bottom: 0ex;
+    padding-left: .25em;
+    padding-right: .25em;
+    font-family: "Roboto Mono", "Noto Sans JP", "Noto Emoji";
+    color: var(--alert-color);
+    background-color: var(--middle-color);
+}
+pre {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-top: .25ex;
+    padding-bottom: .25ex;
+    padding-left: 1mm;
+    padding-right: 1mm;
+    background-color: var(--box-color);
+    line-height: 1.25;
+    tab-size: 4;
+    overflow: visible;
+    color: var(--text-color);
+    background-color: var(--paper-color);
+    border: .25mm solid var(--text-color);
+}
+pre code {
+    tab-size: 4;
+    color: var(--text-color);
+    background: none;
+}
+blockquote code {
+    background-color: var(--box-color);
+}
+.hljs-keyword {
+    color: #0e00ff;
+}
+.hljs-string {
+    color: #a709f5;
+}
+.hljs-comment {
+    color: #008013;
+    font-style: normal;
+}
+
+/* Citations */
+cite {
+    font-style: normal;
+    font-weight: normal;
+    font-size: .75rem;
+    color: var(--text-color);
+}
+
+/* Captions */
+figcaption {
+    caption-side: bottom;
+    margin-bottom: 1ex;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: .75rem;
+    color: var(--text-color);
+}
+
+/* Comments */
+.comment {
+    border-top: 1px dashed var(--comment-color);
+    color: var(--comment-color);
+}
