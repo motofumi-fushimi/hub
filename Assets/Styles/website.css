@@ -91,7 +91,7 @@
     border-radius: 4px;        /* 角丸 */
     padding: 6px 16px !important; /* ボタンの内側の広さ */
     margin: 0 !important;      /* 余計な余白を消す */
-    margin-right: 4px !important;
+    margin-right: 1em !important;
     height: auto !important;   /* 高さを中身に合わせる */
     line-height: 1.2 !important;
 
