@@ -55,7 +55,7 @@ hide:
 
 <div class="iframe-container">
   <iframe
-    src="../poster.html"
+    src="../slidedeck.html"
     style="
       width: 100%;
       aspect-ratio: 16 / 9;
