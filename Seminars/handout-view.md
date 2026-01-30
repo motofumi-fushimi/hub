@@ -8,9 +8,9 @@ hide:
   .md-typeset h1 { display: none; }
   .md-content__inner {
     margin-left: 0;
-    margin-right: auto;
-    width: 100%;
-    max-width: 100%;
+    margin-right: 0;
+    max-width: none;
+    width: auto;
   }
 </style>
 
