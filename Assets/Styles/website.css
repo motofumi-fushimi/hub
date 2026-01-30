@@ -46,6 +46,21 @@
   color: var(--paper-color);
 }
 
+.md-header__source {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin-left: 1rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.md-source {
+  padding-right: 0 !important;
+  width: auto !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
 /* フッター */
 .md-footer {
   text-align: center;
