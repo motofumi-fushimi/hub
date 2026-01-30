@@ -54,6 +54,7 @@ jobs:
             --exclude='.git*' \
             --exclude='.github*' \
             --exclude='.vscode*' \
+            --exclude='node_modules' \
             --exclude='Local' \
             --exclude='site' \
             --exclude='docs' \
