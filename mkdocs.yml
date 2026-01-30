@@ -1,4 +1,4 @@
-site_name: Hub
+site_name: 研究室ポータル
 site_url: https://motofumi-fushimi.github.io/hub/
 repo_url: https://github.com/motofumi-fushimi/hub
 
@@ -15,8 +15,16 @@ theme:
     - navigation.sections      # 第2階層以下のフォルダを「セクション（太字の区切り）」として表示
     - toc.follow               # 右目次の追従
   palette:
-    primary: indigo          # 研究室らしいネイビー系
-    accent: yellow           # アクセントカラー
+    - scheme: default
+  icon:
+    logo: material/account-circle # 将来的に適当なロゴで置き換える
+
+# 著作権表示
+copyright: © 2026 Motofumi Fushimi # Fushimi Lab, *** University
+
+# クレジット表示を消す（ライセンス条項に反しない）
+extra:
+  generator: false
 
 # MkDocs全体に適用するCSS
 extra_css:
