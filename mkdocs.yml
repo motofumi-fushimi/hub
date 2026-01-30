@@ -13,7 +13,6 @@ theme:
     - navigation.tabs        # 上部にタブメニューを表示
     - navigation.top         # 「トップに戻る」ボタン
     - navigation.sections      # 第2階層以下のフォルダを「セクション（太字の区切り）」として表示
-    - navigation.expand        # 最初から全ての階層を展開して表示する（お好みで）
     - toc.follow               # 右目次の追従
   palette:
     primary: indigo          # 研究室らしいネイビー系

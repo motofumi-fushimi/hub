@@ -4,17 +4,16 @@ nav:
   - Rules: rules.md
   - Projects: projects.md
   - Startup: startup.md
-
-  - 覚書:
-    - Instructions: Instructions
-    - Manuals: Manuals
-    - Databases: Databases
-
-  - 資料:
-    - Documents: Documents
+  - Instructions: Instructions
+  - Manuals: Manuals
+  - Databases: Databases
+  - Documents:
+    - Reports: Reports
     - Seminars: Seminars
     - Dissertations: Dissertations
+    - References: References
     - Lectures: Lectures
     - Disseminations: Disseminations
     - Conferences: Conferences
     - Publications: Publications
+    - Templates: Assets/Templates
