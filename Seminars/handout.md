@@ -7,7 +7,7 @@ headingDivider: 1
 paginate: true
 ---
 
-# 磁気共鳴イメージングによる生体組織の物性値マッピング
+# 輪講資料 テンプレート
 
 <!-- _footer: 第N回○○会議（yyyy年MM月dd日） -->
 <div class="author">伏見 幹史</div>

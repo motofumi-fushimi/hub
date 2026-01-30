@@ -7,7 +7,7 @@ headingDivider: 3
 paginate: true
 ---
 
-# タイトル
+# 研究スライド テンプレート
 
 <!-- _paginate: false -->
 
