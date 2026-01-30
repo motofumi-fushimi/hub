@@ -16,4 +16,5 @@ nav:
     - Disseminations: Disseminations
     - Conferences: Conferences
     - Publications: Publications
-    - Templates: Assets/Templates
+    - Templates:
+      - Assets/Templates/*.md
