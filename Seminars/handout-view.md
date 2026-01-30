@@ -12,7 +12,7 @@ hide:
     max-width: 100% !important;
     width: 100% !important;
   }
-  .md-typeset p {
+  .md-content__inner p {
     padding: 0 !important;
     margin: 0 !important;
   }
