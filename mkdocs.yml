@@ -2,13 +2,8 @@ site_name: Hub
 site_url: https://motofumi-fushimi.github.io/hub/
 repo_url: https://github.com/motofumi-fushimi/hub
 
-# ルートディレクトリをソースにする
-docs_dir: .
-
-# 出力先を "_site" に変更
-# (デフォルトの "site" だと、ルートに含まれるため無限ループエラーになることがあります。
-#  アンダースコアで始まるフォルダはMkDocsによって無視されるため安全です)
-site_dir: _site
+docs_dir: docs
+site_dir: site
 
 # UIテーマ設定
 theme:
@@ -31,10 +26,11 @@ plugins:
   - awesome-pages            # ディレクトリ構造＝メニュー構造にする
   - exclude:
       glob:
-        - "Local/**/*"       # ローカルのドラフトフォルダを除外
+        - ".git/**/*"        # Gitフォルダを除外
         - ".vscode/**/*"     # VSCode設定を除外
         - ".github/**/*"     # GitHub設定を除外
         - ".gitignore"       # 設定ファイルは出さない
+        - "Local/**/*"       # ローカルのドラフトフォルダを除外
         - "mkdocs.yml"       # 自分自身を除外
         - "readme.md"        # GitHub用の説明はサイトに出さない
 
