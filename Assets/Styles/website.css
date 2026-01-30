@@ -91,6 +91,7 @@
     border-radius: 4px;        /* 角丸 */
     padding: 6px 16px !important; /* ボタンの内側の広さ */
     margin: 0 !important;      /* 余計な余白を消す */
+    margin-right: 4px !important;
     height: auto !important;   /* 高さを中身に合わせる */
     line-height: 1.2 !important;
 
@@ -102,7 +103,7 @@
   /* 4. マウスを乗せたときの色変化 */
   .md-tabs__item:last-child .md-tabs__link:hover {
     background-color: var(--structure-color); /* 背景をブルーに */
-    color: white !important; /* 文字を白に */
+    color: var(--paper-color) !important; /* 文字を白に */
     opacity: 1 !important;
   }
 
