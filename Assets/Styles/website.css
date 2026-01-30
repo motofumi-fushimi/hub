@@ -47,6 +47,7 @@
 }
 
 .md-header__source {
+  flex-shrink: 0;
   width: auto !important;
   min-width: max-content !important;
   margin-left: 1rem !important;
