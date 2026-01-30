@@ -46,7 +46,7 @@
   color: var(--paper-color);
 }
 
-.md-header__source {
+/* .md-header__source {
   flex-shrink: 0;
   width: auto !important;
   min-width: max-content !important;
@@ -62,7 +62,7 @@
   min-width: max-content !important;
   display: flex !important;
   align-items: center !important;
-}
+} */
 
 /* フッター */
 .md-footer {
