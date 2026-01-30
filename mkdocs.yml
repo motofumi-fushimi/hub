@@ -19,28 +19,6 @@ theme:
     primary: indigo          # 研究室らしいネイビー系
     accent: yellow           # アクセントカラー
 
-nav:
-  - ホーム: index.md
-  - 運営方針: policy.md
-  - ルール: rules.md
-  - テーマ: projects.md
-  - 環境構築: startup.md
-
-  - 覚書:
-    - Instructions: Instructions/
-    - Manuals: Manuals/
-    - Databases: Databases/
-
-  - 資料:
-    - Documents: Documents/
-    - Seminars: Seminars/
-    - Dissertations: Dissertations/
-    - Lectures: Lectures/
-    - Disseminations: Disseminations/
-    - Conferences: Conferences/
-    - Publications: Publications/
-
-
 # MkDocs全体に適用するCSS
 extra_css:
   - Assets/Styles/website.css

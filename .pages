@@ -1,0 +1,20 @@
+nav:
+  - Home: index.md
+  - Policy: policy.md
+  - Rules: rules.md
+  - Projects: projects.md
+  - Startup: startup.md
+
+  - 覚書:
+    - Instructions: Instructions
+    - Manuals: Manuals
+    - Databases: Databases
+
+  - 資料:
+    - Documents: Documents
+    - Seminars: Seminars
+    - Dissertations: Dissertations
+    - Lectures: Lectures
+    - Disseminations: Disseminations
+    - Conferences: Conferences
+    - Publications: Publications
