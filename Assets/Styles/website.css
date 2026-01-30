@@ -54,15 +54,10 @@
   margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-}
+/* } */
 .md-source {
-  padding-left: 0;
-  padding-right: 0;
   width: auto !important;
-  min-width: max-content !important;
-  display: flex !important;
-  align-items: center !important;
-} */
+}
 
 /* フッター */
 .md-footer {
