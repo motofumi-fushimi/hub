@@ -57,7 +57,7 @@
 .md-source {
   padding-left: 1em;
   padding-right: 1em;
-  width: auto !important;
+  width: max-content !important;
   display: flex !important;
   align-items: center !important;
 }
