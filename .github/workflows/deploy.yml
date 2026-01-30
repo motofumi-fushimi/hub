@@ -37,8 +37,7 @@ jobs:
           find . -type d \( -name "node_modules" -o -name ".git" \) -prune -o -type f -name "*.md" -print | while read file; do
             if grep -q "marp: true" "$file"; then
               echo "Processing slide: $file"
-              # CSSパスはご自身の環境に合わせて修正済みと仮定
-              npx @marp-team/marp-cli "$file" --html --allow-local-files --theme-set Assets/Styles/*.css
+              npx @marp-team/marp-cli "$file" --html --allow-local-files --theme-set Assets/Styles/*.css < /dev/null
             fi
           done
 
@@ -59,8 +58,7 @@ jobs:
             --exclude='mkdocs.yml' \
             . docs/
 
-          # 2. 【ここが重要！】Marp用のMarkdown原稿を docs から削除する
-          #    (そうしないとMkDocsが上書きしてしまうため)
+          # Marp用のMarkdown原稿を docs から削除する
           echo "Removing Marp source files from build directory..."
           find docs -type f -name "*.md" | while read file; do
             if grep -q "marp: true" "$file"; then
