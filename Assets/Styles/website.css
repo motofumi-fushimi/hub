@@ -45,16 +45,6 @@
 .md-header__title, .md-header__button, .md-header__topic {
   color: var(--paper-color);
 }
-
-/* .md-header__source {
-  flex-shrink: 0;
-  width: auto !important;
-  min-width: max-content !important;
-  margin-left: 1rem !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-/* } */
 .md-header__source {
   width: 120px;
 }
@@ -74,6 +64,52 @@
   padding-left: 1em !important;  /* 画面端との余白 */
   padding-right: 1em !important;
   box-sizing: border-box; /* パディングを含めて計算 */
+}
+
+@media screen and (min-width: 768px) {
+  /* 1. 右寄せの土台作り */
+  .md-tabs__list {
+    width: 100%;
+    display: flex;
+  }
+
+  /* 2. 最後の要素を右に飛ばし、垂直方向の真ん中に配置 */
+  .md-tabs__item:last-child {
+    margin-left: auto;
+    display: flex;
+    align-items: center; /* 上下の真ん中に来るように調整 */
+  }
+
+  /* 3. リンク自体をボタンのデザインにする */
+  .md-tabs__item:last-child .md-tabs__link {
+    /* 色の設定 (website.cssの変数を使用) */
+    background-color: white; /* 背景は白 */
+    color: var(--structure-color) !important; /* 文字は慶應ブルー */
+    border: 1px solid var(--structure-color); /* 枠線をつける */
+
+    /* 形の調整 */
+    border-radius: 4px;        /* 角丸 */
+    padding: 6px 16px !important; /* ボタンの内側の広さ */
+    margin: 0 !important;      /* 余計な余白を消す */
+    height: auto !important;   /* 高さを中身に合わせる */
+    line-height: 1.2 !important;
+
+    /* 文字の調整 */
+    font-weight: bold !important;
+    opacity: 1 !important;     /* 半透明にしない */
+  }
+
+  /* 4. マウスを乗せたときの色変化 */
+  .md-tabs__item:last-child .md-tabs__link:hover {
+    background-color: var(--structure-color); /* 背景をブルーに */
+    color: white !important; /* 文字を白に */
+    opacity: 1 !important;
+  }
+
+  /* 5. 既存の下線アニメーションを消す */
+  .md-tabs__item:last-child .md-tabs__link::before {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width: 768px) {
