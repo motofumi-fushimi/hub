@@ -1,0 +1,3902 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://motofumi-fushimi.github.io/hub/Manuals/matlab/">
+      
+      
+        <link rel="prev" href="../markdown/">
+      
+      
+        <link rel="next" href="../vscode/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>MATLAB - Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../Assets/Styles/website.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#matlab" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="Hub" class="md-header__button md-logo" aria-label="Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MATLAB
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/motofumi-fushimi/hub" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  テスト
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Assets/Templates/handout/" class="md-tabs__link">
+          
+  
+  
+  Assets
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Databases/awards/" class="md-tabs__link">
+          
+  
+  
+  Databases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Disseminations/APPI-SeniorGuidance/slidedeck/" class="md-tabs__link">
+          
+  
+  
+  Disseminations
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Documents/AY2026/MotofumiFushimi/notebook/" class="md-tabs__link">
+          
+  
+  
+  Documents
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Instructions/collaboration/" class="md-tabs__link">
+          
+  
+  
+  Instructions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../comsol/" class="md-tabs__link">
+          
+  
+  
+  Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Hub" class="md-nav__button md-logo" aria-label="Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/motofumi-fushimi/hub" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    テスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assets/Templates/handout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    磁気共鳴イメージングによる生体組織の物性値マッピング
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assets/Templates/poster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    磁気共鳴イメージングによる生体組織の物性値マッピング
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assets/Templates/slidedeck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    タイトル
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/awards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    表彰リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/chemicals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    薬品リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    会議リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/equipments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    物品
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/grants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    助成リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/journals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    論文誌リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/literatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/stores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    購入先リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/textbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考書リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Databases/theses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学位論文リスト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disseminations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Disseminations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APPI SeniorGuidance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APPI SeniorGuidance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Disseminations/APPI-SeniorGuidance/slidedeck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究紹介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AY2026
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AY2026
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_1" id="__nav_5_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MotofumiFushimi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MotofumiFushimi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documents/AY2026/MotofumiFushimi/notebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TaroSato
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TaroSato
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documents/AY2026/TaroSato/notebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instructions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Instructions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instructions/collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共同作業
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instructions/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    スライド・ポスターの作成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instructions/publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    抄録・論文の作成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instructions/purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    調達
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instructions/reception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    電話対応・来訪者対応
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instructions/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料作成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instructions/survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献調査・文献管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instructions/travel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    出張申請・出張報告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comsol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMSOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creativecloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CreativeCloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        座標系
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        データのツリー構造
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        プログラム構造
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="プログラム構造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最上位インスタンス／変数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        エンティティ／モデルクラス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="エンティティ／モデルクラス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Condition: 解析条件の情報を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant: 物理定数や解析固有の定数を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantity: 物理量の情報を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame: 時空間座標系の情報を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern: 時空間パターンの情報を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opereator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opereator: 作用素
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform: 座標変換
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logger: ログ用クラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporter: レポート用クラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ユーティリティ／ヘルパークラス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ユーティリティ／ヘルパークラス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility: 配列操作など基本的なプログラミング操作のための関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math: 数学関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predictor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predictor: 順問題計算に関わる関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estimator: 逆問題計算に関わる関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimizer: フィッティングや最適化処理のための関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizer: データの可視化のための関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ベストプラクティス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ベストプラクティス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ディレクトリ構成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ファイル構成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スクリプト・関数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="スクリプト・関数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        入出力
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ローカル関数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        その他
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステートメント
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ステートメント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        反復
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        条件分岐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        オブジェクト
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="オブジェクト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        変数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命名規則
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="命名規則">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共通事項
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        変数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        構造体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スクリプト・関数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        フォーマット
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="フォーマット">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        演算子の優先順位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空白
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        その他
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コメント・ドキュメンテーション
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git関連
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考ページ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="参考ページ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        プロット
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スタイル
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSCode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zotero/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zotero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        座標系
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        データのツリー構造
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        プログラム構造
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="プログラム構造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最上位インスタンス／変数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        エンティティ／モデルクラス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="エンティティ／モデルクラス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Condition: 解析条件の情報を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant: 物理定数や解析固有の定数を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantity: 物理量の情報を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame: 時空間座標系の情報を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern: 時空間パターンの情報を管理するクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opereator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opereator: 作用素
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform: 座標変換
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logger: ログ用クラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporter: レポート用クラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ユーティリティ／ヘルパークラス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ユーティリティ／ヘルパークラス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility: 配列操作など基本的なプログラミング操作のための関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math: 数学関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predictor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predictor: 順問題計算に関わる関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estimator: 逆問題計算に関わる関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimizer: フィッティングや最適化処理のための関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizer: データの可視化のための関数を集めたクラス
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ベストプラクティス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ベストプラクティス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ディレクトリ構成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ファイル構成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スクリプト・関数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="スクリプト・関数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        入出力
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ローカル関数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        その他
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステートメント
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ステートメント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        反復
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        条件分岐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        オブジェクト
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="オブジェクト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        変数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命名規則
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="命名規則">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共通事項
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        変数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        構造体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スクリプト・関数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        フォーマット
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="フォーマット">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        演算子の優先順位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空白
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        その他
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コメント・ドキュメンテーション
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git関連
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考ページ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="参考ページ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        プロット
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スタイル
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="matlab">MATLAB</h1>
+<ul>
+<li><a href="#matlab">MATLAB</a></li>
+<li><a href="#座標系">座標系</a></li>
+<li><a href="#データのツリー構造">データのツリー構造</a></li>
+<li><a href="#プログラム構造">プログラム構造</a><ul>
+<li><a href="#最上位インスタンス変数">最上位インスタンス／変数</a></li>
+<li><a href="#エンティティモデルクラス">エンティティ／モデルクラス</a></li>
+<li><a href="#condition-解析条件の情報を管理するクラス"><code>Condition</code>: 解析条件の情報を管理するクラス</a></li>
+<li><a href="#constant-物理定数や解析固有の定数を管理するクラス"><code>Constant</code>: 物理定数や解析固有の定数を管理するクラス</a></li>
+<li><a href="#quantity-物理量の情報を管理するクラス"><code>Quantity</code>: 物理量の情報を管理するクラス</a></li>
+<li><a href="#frame-時空間座標系の情報を管理するクラス"><code>Frame</code>: 時空間座標系の情報を管理するクラス</a></li>
+<li><a href="#pattern-時空間パターンの情報を管理するクラス"><code>Pattern</code>: 時空間パターンの情報を管理するクラス</a></li>
+<li><a href="#opereator-作用素"><code>Opereator</code>: 作用素</a></li>
+<li><a href="#transform-座標変換"><code>Transform</code>: 座標変換</a></li>
+<li><a href="#logger-ログ用クラス"><code>Logger</code>: ログ用クラス</a></li>
+<li><a href="#reporter-レポート用クラス"><code>Reporter</code>: レポート用クラス</a></li>
+<li><a href="#ユーティリティヘルパークラス">ユーティリティ／ヘルパークラス</a></li>
+<li><a href="#utility-配列操作など基本的なプログラミング操作のための関数を集めたクラス"><code>Utility</code>: 配列操作など基本的なプログラミング操作のための関数を集めたクラス</a></li>
+<li><a href="#math-数学関数を集めたクラス"><code>Math</code>: 数学関数を集めたクラス</a></li>
+<li><a href="#predictor-順問題計算に関わる関数を集めたクラス"><code>Predictor</code>: 順問題計算に関わる関数を集めたクラス</a></li>
+<li><a href="#estimator-逆問題計算に関わる関数を集めたクラス"><code>Estimator</code>: 逆問題計算に関わる関数を集めたクラス</a></li>
+<li><a href="#optimizer-フィッティングや最適化処理のための関数を集めたクラス"><code>Optimizer</code>: フィッティングや最適化処理のための関数を集めたクラス</a></li>
+<li><a href="#visualizer-データの可視化のための関数を集めたクラス"><code>Visualizer</code>: データの可視化のための関数を集めたクラス</a></li>
+</ul>
+</li>
+<li><a href="#ベストプラクティス">ベストプラクティス</a><ul>
+<li><a href="#ディレクトリ構成">ディレクトリ構成</a></li>
+<li><a href="#ファイル構成">ファイル構成</a></li>
+<li><a href="#スクリプト関数">スクリプト・関数</a></li>
+<li><a href="#入出力">入出力</a></li>
+<li><a href="#ローカル関数">ローカル関数</a></li>
+<li><a href="#その他">その他</a></li>
+<li><a href="#ステートメント">ステートメント</a></li>
+<li><a href="#反復">反復</a></li>
+<li><a href="#条件分岐">条件分岐</a></li>
+<li><a href="#オブジェクト">オブジェクト</a></li>
+<li><a href="#定数">定数</a></li>
+<li><a href="#変数">変数</a></li>
+<li><a href="#命名規則">命名規則</a></li>
+<li><a href="#共通事項">共通事項</a></li>
+<li><a href="#定数-1">定数</a></li>
+<li><a href="#変数-1">変数</a></li>
+<li><a href="#構造体">構造体</a></li>
+<li><a href="#スクリプト関数-1">スクリプト・関数</a></li>
+<li><a href="#フォーマット">フォーマット</a></li>
+<li><a href="#演算子の優先順位">演算子の優先順位</a></li>
+<li><a href="#空白">空白</a></li>
+<li><a href="#その他-1">その他</a></li>
+<li><a href="#コメントドキュメンテーション">コメント・ドキュメンテーション</a></li>
+</ul>
+</li>
+<li><a href="#git関連">Git関連</a></li>
+<li><a href="#参考ページ">参考ページ</a><ul>
+<li><a href="#プロット">プロット</a></li>
+<li><a href="#スタイル">スタイル</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">座標系</h2>
+<p>RAS右手系</p>
+<h2 id="_2">データのツリー構造</h2>
+<ul>
+<li>exam: その日の実験．subjectに近いが同じ被験者を複数日測定する場合もあるので異なる．</li>
+<li>series: 個別の撮像シーケンスや刺激条件．</li>
+<li>instance: 単一データの中の区分．</li>
+</ul>
+<h2 id="_3">プログラム構造</h2>
+<p>MRI, MPI, NMIに共通</p>
+<p>これらはCoreリポジトリ内に作る．
+MRI/NMI/MPIの各親リポジトリからサブモジュールとして参照する．
+lib/labに配置する。</p>
+<p>クラス名はPascalCase．
+これから作られたインスタンスはcamelCase．</p>
+<ul>
+<li><code>conditions = Condition(); % エンティティクラスに対するインスタンス化</code></li>
+<li><code>util = Utility(); % ユーティリティクラスもインスタンス化可能にしている</code></li>
+</ul>
+<h3 id="_4">最上位インスタンス／変数</h3>
+<ul>
+<li><code>conditions</code>: 解析に関する情報．<code>Condition</code>クラス．</li>
+<li><code>constants</code>: 物理定数やその他の定数．<code>Constant</code>クラス．</li>
+<li><code>sources</code>/<code>properties</code>: 推定対象の量．<code>Quantity</code>クラス．</li>
+<li><code>fields</code>: 観測対象の量．<code>Quantity</code>クラス．</li>
+<li><code>operators</code>: 作用素情報．<code>Operator</code>クラス．とりあえず普通の構造体．</li>
+<li><code>transforms</code>: 座標変換情報．<code>Transform</code>クラス．とりあえず普通の構造体．</li>
+<li><code>annotations</code>: イベント情報など？<code>Annotation</code>クラス．とりあえず普通の構造体．</li>
+<li><code>covariances</code>: 分散情報など？<code>Covariance</code>クラス．とりあえず普通の構造体．</li>
+</ul>
+<h3 id="_5">エンティティ／モデルクラス</h3>
+<p>設計図．
+プロパティを持ちインスタンス化される．</p>
+<h4 id="condition"><code>Condition</code>: 解析条件の情報を管理するクラス</h4>
+<p>プロパティ</p>
+<ul>
+<li><code>exam</code>: 実験ID</li>
+<li><code>series</code>: プロトコルID</li>
+<li><code>source</code></li>
+<li><code>type</code>: <code>"discrete"</code>, <code>"distributed"</code>, <code>"patch"</code>など．</li>
+<li><code>position</code></li>
+<li><code>orientation</code></li>
+<li><code>method</code></li>
+<li><code>filter</code></li>
+<li><code>regularization</code></li>
+<li><code>comment</code></li>
+</ul>
+<blockquote>
+<p>これ以外にも動的に追加できるようにする</p>
+</blockquote>
+<p>メソッド</p>
+<h4 id="constant"><code>Constant</code>: 物理定数や解析固有の定数を管理するクラス</h4>
+<p>プロパティは動的に変更できるようにする</p>
+<h4 id="quantity"><code>Quantity</code>: 物理量の情報を管理するクラス</h4>
+<p>プロパティ</p>
+<ul>
+<li><code>frames</code>: 時空間座標系．<code>Frame</code>クラスからなる辞書．キーは<code>"space"</code>, <code>"time"</code>, <code>"spatial frequency"</code>, <code>"temporal frequency"</code>など．</li>
+<li><code>patterns</code>: 時空間パターン．<code>Pattern</code>クラスからなる辞書．キーは<code>"magnetic field"</code>など各種物理量．</li>
+<li><code>metrics</code>: 上記パターンから計算されるエネルギーや誤差率などの集約値．構造体からなる辞書．キーは<code>"magnetic field"</code>など各種物理量．</li>
+<li><code>histories</code>: 処理の履歴．構造体からなる辞書．キーは<code>"magnetic field"</code>など各種物理量．</li>
+</ul>
+<p>メソッド</p>
+<h4 id="frame"><code>Frame</code>: 時空間座標系の情報を管理するクラス</h4>
+<p>プロパティ</p>
+<ul>
+<li><code>instant</code>: 時間点</li>
+<li><code>position</code>: 位置座標</li>
+<li><code>orientation</code>: 方向．ない場合も．</li>
+<li><code>triangulation</code>: 三角分割のときに存在．</li>
+<li><code>type</code>: 点群の種別．<code>"scatter"</code>, <code>"grid"</code>, <code>"mesh"</code>のどれか．</li>
+<li><code>coordinate</code>: 値の座標系．</li>
+</ul>
+<p>メソッド</p>
+<ul>
+<li>frequency: instantからfrequencyのリストをつくる．片側両側を引数で指定できるようにする．</li>
+<li>transformCoordinate: 座標系を変換する</li>
+</ul>
+<h4 id="pattern"><code>Pattern</code>: 時空間パターンの情報を管理するクラス</h4>
+<p>プロパティ</p>
+<ul>
+<li><code>true</code></li>
+<li><code>measured</code></li>
+<li><code>filtered</code></li>
+<li><code>estimated</code></li>
+<li><code>predicted</code></li>
+<li><code>type</code>: 場の種別．<code>"scalar"</code>, <code>"vector"</code>, <code>"tensor"</code>のどれか．</li>
+</ul>
+<p>メソッド</p>
+<p>フィルタリングなどの各種信号／画像処理関数</p>
+<h4 id="opereator"><code>Opereator</code>: 作用素</h4>
+<p>プロパティは動的に変更できるようにする</p>
+<ul>
+<li><code>leadfield</code></li>
+<li><code>leadmoment</code></li>
+<li><code>ssp</code></li>
+<li><code>sss</code></li>
+<li><code>ica</code></li>
+<li><code>assembler</code>: コイル型センサの重み</li>
+<li><code>whitener</code>: もしくはwhitener</li>
+</ul>
+<p>メソッド</p>
+<ul>
+<li>w = whitener(v, method): 分散行列から白色化（球状化）行列を計算する</li>
+<li>v = variance(w): 白色化行列から分散行列を計算する</li>
+</ul>
+<h4 id="transform"><code>Transform</code>: 座標変換</h4>
+<p>ある基準座標からの変換行列．</p>
+<p>プロパティは動的に追加可能．</p>
+<ul>
+<li><code>head</code></li>
+<li><code>meg</code></li>
+<li><code>mri</code></li>
+</ul>
+<h4 id="logger"><code>Logger</code>: ログ用クラス</h4>
+<p>処理経過のコマンドウィンドウへの表示など</p>
+<h4 id="reporter"><code>Reporter</code>: レポート用クラス</h4>
+<p>図のエクスポートなど</p>
+<h3 id="_6">ユーティリティ／ヘルパークラス</h3>
+<p>道具箱．
+プロパティを持たずインスタンス化されない．</p>
+<h4 id="utility"><code>Utility</code>: 配列操作など基本的なプログラミング操作のための関数を集めたクラス</h4>
+<p>略称<code>util</code></p>
+<h4 id="math"><code>Math</code>: 数学関数を集めたクラス</h4>
+<p>略称<code>math</code></p>
+<h4 id="predictor"><code>Predictor</code>: 順問題計算に関わる関数を集めたクラス</h4>
+<p>略称<code>fwd</code></p>
+<h4 id="estimator"><code>Estimator</code>: 逆問題計算に関わる関数を集めたクラス</h4>
+<p>略称<code>inv</code></p>
+<h4 id="optimizer"><code>Optimizer</code>: フィッティングや最適化処理のための関数を集めたクラス</h4>
+<p>略称<code>opt</code></p>
+<h4 id="visualizer"><code>Visualizer</code>: データの可視化のための関数を集めたクラス</h4>
+<p>略称<code>viz</code></p>
+<h2 id="_7">ベストプラクティス</h2>
+<h3 id="_8">ディレクトリ構成</h3>
+<p><code>$PROJECT_DIR</code>以下のディレクトリ構成．</p>
+<p>最上位の構成は以下の通り．</p>
+<ul>
+<li><code>app</code>：メインアプリ(<code>CUI.m</code>, <code>GUI.mlapp</code>)</li>
+<li><code>doc</code>：ドキュメント(<code>readme.md</code>, <code>changelog.md</code>, <code>license.md</code>)</li>
+<li><code>data</code>：データ(<code>.mat</code>)</li>
+<li><code>lib</code>：クラス(<code>.m</code>)</li>
+<li><code>src</code>：関数(<code>.m</code>)</li>
+<li><code>+project1/</code>: プロジェクトに固有の関数群．特に<code>Main.m</code>を含む．</li>
+<li><code>+project2/</code></li>
+<li><code>+project3/</code></li>
+<li><code>test</code>：テスト用の関数・スクリプト(<code>.m</code>)</li>
+<li><code>util</code>：メインアプリで使用されない関数・スクリプト(<code>.m</code>)</li>
+<li><code>local</code>：Git管理から外すファイル</li>
+</ul>
+<p>これらの下層の構成は状況に応じて定める．</p>
+<blockquote>
+<p>dataはMATファイルに変換したもの．生データ(<code>.dcm</code>, <code>.csv</code>, ...)は別のディレクトリで管理．</p>
+</blockquote>
+<h3 id="_9">ファイル構成</h3>
+<p>モジュール化する．</p>
+<ul>
+<li>メインアプリが行う処理をスクリプトに細分する</li>
+<li>各スクリプトが行う処理を関数に細分する</li>
+<li>各関数が担うのは限定された単一の処理とする</li>
+<li>ファイル数を増やさないためにはローカル関数を利用する</li>
+<li>複数のファイルに現れる処理は一つの関数ファイルにパッケージ化する</li>
+</ul>
+<blockquote>
+<p>特に，外部とのIO部分を担うスクリプト・関数は独立させておく．IO部分は仕様が変更されやすい．</p>
+</blockquote>
+<h3 id="_10">スクリプト・関数</h3>
+<h4 id="_11">入出力</h4>
+<ul>
+<li><code>inputParser</code>による構文解析を行い，パース済みの入力(<code>P.Results</code>以下)を使ってその後の処理を行う．また，パースの過程で入力の妥当性の検証も行う．チェック用の関数としては以下が考えられる．</li>
+<li>既存のMATLAB関数(<code>isa</code>)</li>
+<li>無名関数</li>
+<li>自前のローカル関数</li>
+<li><code>validateattributes()</code></li>
+<li><code>ischar(validatestring())</code><blockquote>
+<p>自分でエラー文を作成するよりは，MATLAB既定の関数やvalidation関数を用いることで，既定の形式かつロケールに合わせた言語でエラー文を表示させられる．</p>
+</blockquote>
+</li>
+<li>関数の入力の型には柔軟性を持たせる<blockquote>
+<p>画像を入力とする場合，二値画像，整数値グレー画像，実数値グレー画像を受け付けるようにする
+カラー画像にも適用できる関数の場合はそれも受け入れるようにする</p>
+</blockquote>
+</li>
+<li>関数の引数が多い場合は，関連する入力のセットを構造体にする</li>
+<li>構造体とすることで引数を定まった順番で与える負担が減る<blockquote>
+<p>反復を行う関数なら<code>Option</code>という構造体を用意して<code>initialValue</code>, <code>maximumIteration</code>, <code>optimalTorelance</code>等を格納する．</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="_12">ローカル関数</h4>
+<ul>
+<li>一つのスクリプト・関数ファイル中に任意の個数のローカル関数を含められる</li>
+<li>ローカル関数は他の関数からは呼び出されない（隠蔽される）</li>
+<li>一つのスクリプト・関数内のみで使用される関数はローカル関数として作成すると，ファイル数の増加が抑えられる</li>
+<li>複数のファイル内で用いられる場合は別ファイルとして作成するべき</li>
+</ul>
+<h4 id="_13">その他</h4>
+<ul>
+<li>可能な限り既存の関数を利用する</li>
+<li>大域変数よりも関数の引数の使用する</li>
+<li>すべての関数に対してテストスクリプトを書くようにする</li>
+<li><code>eval</code>や<code>assignin</code>の使用を避ける</li>
+<li>テキスト情報はchar型ではなくstring型を基本とし，操作系関数は新しいものを使う<blockquote>
+<p>strfind, strcmp, strrep等の代わりにmatches, contains, startsWith, endsWith, replace等を用いる．
+詳細は<a href="https://jp.mathworks.com/help/matlab/matlab_prog/searching-and-replacing.html">テキストの検索と置換</a>および<a href="https://jp.mathworks.com/help/matlab/matlab_prog/string-comparisons.html">テキストの比較</a>を参照</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="_14">ステートメント</h3>
+<h4 id="_15">反復</h4>
+<ul>
+<li>ループ内で使用する変数はその直前で初期化（アロケート）しておく</li>
+<li>ループでの<code>break</code>と<code>continue</code>の使用は最小限に抑え，可読性が大きく向上する場合に限る</li>
+<li>多重の入れ子ループの場合各end行にコメントを入れ，その入れ子内で何が行われたか分かるようにする</li>
+</ul>
+<h4 id="_16">条件分岐</h4>
+<ul>
+<li>条件ステートメントは明瞭に</li>
+<li>複雑な場合は一時的な変数を使用して分割する</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">isValid</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">lowerLimit</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">upperLimit</span><span class="p">);</span>
+<span class="n">isNew</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">~</span><span class="nb">ismember</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">valueArray</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isValid</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">isNew</span><span class="p">)</span>
+<span class="w">  </span><span class="k">...</span>
+<span class="k">end</span>
+</code></pre></div>
+<ul>
+<li>否定の条件変数は使用しない<blockquote>
+<p><code>isNotValid</code>ではなく<code>~isValid</code>とする</p>
+</blockquote>
+</li>
+<li>if-elseはよく起こる場合を先に書く</li>
+<li>switch文には必ずotherwiseを付ける</li>
+<li>switchの各条件は文字列だとわかりやすい</li>
+</ul>
+<h3 id="_17">オブジェクト</h3>
+<h4 id="_18">定数</h4>
+<ul>
+<li>マジックナンバーを避ける</li>
+<li>定数用の変数を用意しておく<blockquote>
+<p>Javaでは定数をまとめるのに定数クラスを作成する．
+これに倣って定数をまとめた構造体を用意する．</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="_19">変数</h4>
+<ul>
+<li>グローバル変数の使用は変数のスコープや依存関係を分かりにくくするため避ける<blockquote>
+<p>関数の引数に加えてしまうのが良い</p>
+</blockquote>
+</li>
+<li>メモリ要件が厳しい場合を除いて，同じ変数名を使いまわさない<blockquote>
+<p>変数名と内容が一意に対応するようにする</p>
+</blockquote>
+</li>
+<li>配列の次元に関する規則を定める</li>
+<li>時間データ：(1, t)</li>
+<li>空間データ：(x, y, z)</li>
+<li>時空間データ：(x, y, z, t)</li>
+<li>多点時間データ：(t, c)：FieldTripの規則(c, t)との違いに注意</li>
+<li>多点空間データ：(x, y, z, c)</li>
+<li>多点時空間データ：(x, y, z, t, c)：MRI(freqEnc, phaseEnc, slice, echo, channel)に相当</li>
+</ul>
+<h3 id="_20">命名規則</h3>
+<h4 id="_21">共通事項</h4>
+<ul>
+<li>すべてパスカルケースかキャメルケースで記述する<blockquote>
+<p>スネークケースはTeXインタプリタが下付き添字と解釈するので避ける．
+ケバブケースはMATLABがminusと解釈されるので使用不可．</p>
+</blockquote>
+</li>
+<li>単語を省略しない<blockquote>
+<p><code>compTotWid</code>ではなく<code>computeTotalWidth</code>とする</p>
+</blockquote>
+</li>
+<li>数学関数として定着しているものは省略する<blockquote>
+<p><code>max</code>, <code>gcd</code></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="_22">定数</h4>
+<ul>
+<li>パスカルケース</li>
+<li>同種の定数は接頭辞で区別してもよい<blockquote>
+<p><code>ColorRed</code>, <code>ColorBlue</code>, <code>ColorGreen</code></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="_23">変数</h4>
+<ul>
+<li>キャメルケース</li>
+<li>スコープの長い変数ほど正確な名前に，短い変数ほど簡単な名前にする</li>
+<li>原則的に言葉を変数名にする</li>
+<li>物理学で標準的な表記として予約されている記号を用いる場合は数式記号を変数名にする</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">height</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">depth</span><span class="p">;</span><span class="w"> </span><span class="c">% avoid V = w * h * d;</span>
+<span class="n">Jx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ex</span><span class="p">;</span><span class="w"> </span><span class="c">% 物理的に通じる</span>
+<span class="n">dx</span><span class="p">;</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span><span class="w"> </span><span class="c">% スコープが短いならあり</span>
+</code></pre></div>
+<ul>
+<li>単数形変数があるなら複数形変数は作成しない．代わりに<code>Array</code>や<code>List</code>等の接尾辞をつける．</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">point</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">pointArray</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c">% Do not use `points`</span>
+</code></pre></div>
+<p>変数の接頭辞として以下を予約する．</p>
+<ul>
+<li><code>s</code>：配列の各次元の要素数が作る行ベクトル（<code>sArray = size(Array)</code>ということ）</li>
+<li><code>n</code>：総数</li>
+<li><code>i</code>：反復子</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="n">iFile</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nFiles</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">iSubject</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nSubjects</span>
+<span class="w">        </span><span class="k">...</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<ul>
+<li><code>ind</code>：任意の次元の配列の線形インデックス</li>
+<li><code>row</code>：二次元配列の行のインデックス</li>
+<li><code>col</code>：二次元配列の列のインデックス</li>
+<li><code>dim1</code>, <code>dim2</code>, <code>dim3</code>, ...：多次元配列の各次元のインデックス</li>
+<li><code>sub</code>：二次元以上の配列の各次元のインデックスを並べた一次元配列</li>
+<li><code>is</code>：論理型変数</li>
+</ul>
+<h4 id="_24">構造体</h4>
+<ul>
+<li>パスカルケース</li>
+<li>フィールド名に構造体名を加えない<blockquote>
+<p><code>Segment.segmentLength</code>ではなく<code>Segment.length</code>とする</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="_25">スクリプト・関数</h4>
+<ul>
+<li>スクリプトはパスカルケース，関数はキャメルケース</li>
+<li>単一出力の関数はその名前を関数名にする：<code>mean</code></li>
+<li>出力のない（ハンドルのみ出力する）関数は何をするかを名前にする：<code>plot</code></li>
+<li>findをインデックスを返す関数の接頭辞にする</li>
+<li>isを論理値を返す関数の接頭辞にする</li>
+<li>関数の接頭辞として以下はセッタ・ゲッタに予約し，それ以外の文脈で使わない．</li>
+<li><code>set</code></li>
+<li><code>get</code></li>
+</ul>
+<h3 id="_26">フォーマット</h3>
+<p>方針として，MATLABデスクトップ（MATLABの公式IDE）の既定に従うのが良い．</p>
+<h4 id="_27">演算子の優先順位</h4>
+<p>以下のように定められている．</p>
+<ol>
+<li>小かっこ(<code>()</code>)</li>
+<li>転置(<code>.'</code>)，べき乗(<code>.^</code>)，複素共役転置(<code>'</code>)，行列のべき乗(<code>^</code>)</li>
+<li>単項マイナス(<code>.^-</code>)，単項プラス(<code>.^+</code>)，論理否定(<code>.^~</code>) を伴うべき乗，および単項マイナス(<code>^-</code>)，単項プラス(<code>^+</code>)，論理否定(<code>^~</code>)を伴う行列のべき乗</li>
+<li>単項プラス(<code>+</code>)，単項マイナス(<code>-</code>)，論理否定(<code>~</code>)</li>
+<li>乗算(<code>.*</code>)，右除算(<code>./</code>)，左除算(<code>.\</code>)，行列乗算(<code>*</code>)，行列右除算(<code>/</code>)，行列左除算(<code>\</code>)</li>
+<li>加算(<code>+</code>)，減算 (<code>-</code>)</li>
+<li>コロン演算子(<code>:</code>)</li>
+<li>より小(<code>&lt;</code>)，以下(<code>&lt;=</code>)，より大(<code>&gt;</code>)，以上(<code>&gt;=</code>)，等価(<code>==</code>)，等価でない(<code>~=</code>)</li>
+<li>要素単位のAND(<code>&amp;</code>)</li>
+<li>要素単位のOR(<code>|</code>)</li>
+<li>ショートサーキットのAND(<code>&amp;&amp;</code>)</li>
+<li>ショートサーキットのOR(<code>||</code>)</li>
+</ol>
+<p>これを厳密に記憶して実践するのは困難であるから，丸括弧を冗長に使用するべきである．
+また，論理演算と数値演算を混合（暗黙の変換）しないように決めておけば，これらを別々に記憶しておけばよい．
+より大まかな以下の関係だけ記憶する．</p>
+<p>数値演算</p>
+<ol>
+<li>丸括弧(<code>()</code>)</li>
+<li>配列転置(<code>.'</code>)，配列冪乗(<code>.^</code>)，複素共役転置(<code>'</code>)，行列冪乗(<code>^</code>)</li>
+<li>単項プラス(<code>+</code>)，単項マイナス(<code>-</code>)</li>
+<li>配列乗算(<code>.*</code>)，配列右除算(<code>./</code>)，配列左除算(<code>.\</code>)，行列乗算(<code>*</code>)，行列右除算(<code>/</code>)，行列左除算(<code>\</code>)</li>
+<li>加算(<code>+</code>)，減算 (<code>-</code>)</li>
+<li>コロン演算子(<code>:</code>)</li>
+</ol>
+<p>論理演算</p>
+<ol>
+<li>論理否定(<code>~</code>)</li>
+<li>より小(<code>&lt;</code>)，以下(<code>&lt;=</code>)，より大(<code>&gt;</code>)，以上(<code>&gt;=</code>)，等価(<code>==</code>)，等価でない(<code>~=</code>)</li>
+<li>要素単位のAND(<code>&amp;</code>)，要素単位のOR(<code>|</code>)</li>
+<li>ショートサーキットのAND(<code>&amp;&amp;</code>)，ショートサーキットのOR(<code>||</code>)</li>
+</ol>
+<h4 id="_28">空白</h4>
+<p>以下の部分は必ず空白で囲む．</p>
+<ul>
+<li>等号：<code>=</code></li>
+<li>加算と減算：<code>+</code>, <code>-</code></li>
+<li>論理演算子：<code>&amp;&amp;</code>, <code>||</code>, <code>==</code>, <code>~=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+</ul>
+<p>以下の部分には空白を置かない．</p>
+<ul>
+<li>コンマ演算子：<code>:</code></li>
+</ul>
+<p>以下の部分は状況に応じて決める．</p>
+<ul>
+<li>乗算と除算：<code>*</code>, <code>/</code></li>
+</ul>
+<h4 id="_29">その他</h4>
+<ul>
+<li>4インデント</li>
+<li>80カラム</li>
+<li>コード上の改行は自然な区切り位置で行う</li>
+<li>一行につき一動作</li>
+<li>演算子の優先順位規定に頼りすぎずに，括弧を積極的に用いる</li>
+<li>小数点の前の0は省略しない</li>
+<li>短いif, while, for文は一行にした方が見やすい場合がある</li>
+<li>switch分の各caseも一行にした方が可読性が上がる場合がある</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">statement</span><span class="p">;</span><span class="w"> </span><span class="k">end</span>
+<span class="k">while</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">statement</span><span class="p">;</span><span class="w"> </span><span class="k">end</span>
+<span class="k">for</span><span class="w"> </span><span class="n">iVar</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nVars</span><span class="p">,</span><span class="w"> </span><span class="n">statement</span><span class="p">;</span><span class="w"> </span><span class="k">end</span>
+<span class="k">switch</span><span class="w"> </span><span class="nb">var</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">pattern1</span><span class="p">,</span><span class="w"> </span><span class="n">statement</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">pattern2</span><span class="p">,</span><span class="w"> </span><span class="n">statement</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">pattern3</span><span class="p">,</span><span class="w"> </span><span class="n">statement</span><span class="p">;</span>
+<span class="k">end</span>
+</code></pre></div>
+<ul>
+<li>適当な区切りで空行を設ける</li>
+<li>MATLABエディタのセクション機能(<code>%%</code>)で区切る</li>
+</ul>
+<h3 id="_30">コメント・ドキュメンテーション</h3>
+<ul>
+<li>MATLABでは変数の宣言が不要な場合があるから注釈を忘れないように注意する</li>
+<li>複数行コメントを積極的に利用する</li>
+<li>関数の<code>function</code>宣言の直後にコメントを書く（ヘッダコメント）ことでhelp参照できるようにする</li>
+<li>ヘッダコメントでは関数の全体説明と構文，入出力の説明を行う</li>
+<li>著作権と変更履歴はhelpに表示されないようにヘッダコメントから一行空ける</li>
+</ul>
+<h2 id="git">Git関連</h2>
+<p>CLIソフトであるGitを扱いやすくするためのGUIソフトは色々とあるが，MATLABプログラムの場合MATLABデスクトップにGit関連の操作を行うGUIツールが組み込まれている．
+MATLABデスクトップアプリから出ることなく一通りのGit関連操作が可能．</p>
+<h2 id="_31">参考ページ</h2>
+<h3 id="_32">プロット</h3>
+<ol>
+<li><a href="https://jp.mathworks.com/help/matlab/2-and-3d-plots.html">MATLABの公式プロット関連資料</a></li>
+<li><a href="https://jp.mathworks.com/products/matlab/plot-gallery.html">MATLAB Plot Gallery</a></li>
+</ol>
+<h3 id="_33">スタイル</h3>
+<ol>
+<li><a href="https://www.amazon.co.jp/exec/obidos/ASIN/0521732581/asakai-22/ref=nosim/">The Elements of MATLAB Style (Amazon.co.jp)</a></li>
+<li><a href="https://jp.mathworks.com/matlabcentral/fileexchange/46056-matlab-style-guidelines-2-0">MATLAB Style Guidelines 2.0 (MATLAB File Exchange)</a></li>
+<li><a href="http://www.mk.ecei.tohoku.ac.jp/home_page_j.html">MATLAB Style Guidelines 2.0の和訳（東北大学川又研究室）</a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
