@@ -38,7 +38,7 @@
   color: var(--paper-color);
 }
 
-.md-header .md-grid, .md-tabs .md-grid, .md-footer__inner {
+.md-header .md-grid, .md-tabs .md-grid, .md-grid, .md-footer__inner {
   max-width: var(--md-content-width) !important;
   margin-right: auto;
   margin-left: auto;

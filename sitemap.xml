@@ -5,6 +5,22 @@
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
+         <loc>https://motofumi-fushimi.github.io/hub/policy/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/projects/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/rules/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/startup/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
          <loc>https://motofumi-fushimi.github.io/hub/Assets/Templates/handout/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
@@ -14,6 +30,10 @@
     </url>
     <url>
          <loc>https://motofumi-fushimi.github.io/hub/Assets/Templates/slidedeck/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Conferences/AY2026/TestConference-MotofumiFushimi/text/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
@@ -61,11 +81,43 @@
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Dissertations/AY2026/Bachelor-MotofumiFushimi/test/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
          <loc>https://motofumi-fushimi.github.io/hub/Documents/AY2026/MotofumiFushimi/notebook/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://motofumi-fushimi.github.io/hub/Documents/AY2026/TaroSato/notebook/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Documents/Engineering/notebook/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Documents/Informatics/notebook/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Documents/MPI/notebook/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Documents/MRI/notebook/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Documents/Mathematics/notebook/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Documents/NMI/notebook/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Documents/Physics/notebook/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
@@ -98,6 +150,10 @@
     </url>
     <url>
          <loc>https://motofumi-fushimi.github.io/hub/Instructions/travel/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Lectures/APPI-TestLecture/test/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
@@ -134,6 +190,14 @@
     </url>
     <url>
          <loc>https://motofumi-fushimi.github.io/hub/Manuals/zotero/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Publications/AY2026/TestJournal-MotofumiFushimi/test/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://motofumi-fushimi.github.io/hub/Seminars/AY2026/B4Seminar-MotofumiFushimi/handout/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
 </urlset>
