@@ -31,22 +31,39 @@ jobs:
         run: npm install -g @marp-team/marp-cli
 
       # --- 2. MarpスライドのHTML化処理 ---
-      # ■ 変更点: --theme-set オプションを追加してカスタムCSSを読み込ませる
+      # 以前と同様、ルート以下のMarkdownを探してHTML化します
       - name: Build Marp Slides
         run: |
           echo "Scanning project root for Marp slides..."
-          # 隠しファイルとnode_modulesを除外して検索
           find . -type f -name "*.md" -not -path '*/.*' | while read file; do
             if grep -q "marp: true" "$file"; then
               echo "Processing slide: $file"
-
-              # Assets/Styles/ 以下の全CSSをテーマセットとして渡します
               npx @marp-team/marp-cli "$file" --html --allow-local-files --theme-set Assets/Styles/*.css
-
             fi
           done
 
-      # --- 3. MkDocsビルド & デプロイ ---
+      # --- 3. 【重要】ドキュメント用フォルダの準備 ---
+      # ここで docs フォルダを作り、サイトに必要なファイルだけをそこにコピーします。
+      # これにより、MkDocsの「設定ファイルと同じ場所はダメ」というエラーを回避します。
+      - name: Prepare Docs Directory
+        run: |
+          mkdir docs
+
+          # rsyncを使って、除外したいファイル以外をすべて docs にコピーします
+          rsync -av \
+            --exclude='.git*' \
+            --exclude='.github*' \
+            --exclude='.vscode*' \
+            --exclude='Local' \
+            --exclude='site' \
+            --exclude='docs' \
+            --exclude='readme.md' \
+            --exclude='.gitignore' \
+            --exclude='mkdocs.yml' \
+            . docs/
+
+      # --- 4. MkDocsビルド & デプロイ ---
+      # docs の中身を使ってビルドが行われます
       - name: Build MkDocs Site
         run: mkdocs build
 
@@ -54,5 +71,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./site
           publish_branch: public
