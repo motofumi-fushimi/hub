@@ -28,16 +28,7 @@
   --md-tabs-height: 60px;
 }
 
-/* Title, author, and affiliation */
-.title, .author, .affiliation {
-  font-size: xx-large;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 0ex;
-  margin-bottom: 2ex;
-  color: var(--paper-color);
-}
-
+/* 全体 */
 .md-header .md-grid, .md-tabs .md-grid, .md-grid, .md-footer__inner {
   max-width: var(--md-content-width) !important;
   margin-right: auto;
@@ -131,137 +122,255 @@
   }
 }
 
+/* --- 本文エリア全体の設定 --- */
+/* html, body の代わりに .md-typeset を使用 */
+.md-typeset {
+  font-family: "Noto Serif JP", "Noto Serif", "Noto Emoji" !important;
+  font-size: var(--markdown-font-size, 14px);
+  line-height: var(--markdown-line-height, 22px);
+  color: var(--text-color) !important;
+  /* background-color: var(--paper-color); ← 全背景が白くならないようコメントアウト */
+}
+
+/* Author, affiliation (メタデータ用) */
+.md-typeset .author,
+.md-typeset .affiliation,
+.md-typeset .date {
+  display: block; /* MkDocsではblock要素にする */
+  text-align: right;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+/* --- 見出し (H1 - H5) --- */
+/* Materialテーマのデフォルトを打ち消すために !important を使用 */
+
 .md-typeset h1 {
-  display: none;
+  margin-top: 0ex;
+  margin-bottom: 1ex;
+  padding: .5ex .5em !important; /* 上下 左右 */
+  font-size: 1.5em !important;
+  font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji" !important;
+  color: var(--paper-color) !important;
+  background-color: var(--structure-color);
+  font-weight: normal !important;
+  border-bottom: none !important; /* Materialのデフォルト下線を消す */
 }
 
 .md-typeset h2 {
-  margin-top: 1.5ex;
-  margin-bottom: 0ex;
-  border-top: 2px solid var(--box-color);
-  padding-top: 1.5ex;
-
-  text-align: center;
-  font-weight: bold !important;
-  font-size: xx-large;
-  color: var(--structure-color);
+  margin-top: 1ex;
+  margin-bottom: 1ex;
+  padding: .5ex .5em !important;
+  border-left: .5em solid var(--structure-color) !important;
+  border-bottom: .25ex solid var(--structure-color) !important;
+  font-size: 1.5em !important;
+  font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji" !important;
+  color: var(--structure-color) !important;
+  background-color: var(--paper-color);
+  font-weight: normal !important;
 }
 
 .md-typeset h3 {
-  border-left: 4px solid var(--structure-color);
-  padding-left: 1ex;
-
-  font-weight: bold !important;
-  font-size: x-large;
-  color: var(--structure-color);
+  margin-top: 1ex;
+  margin-bottom: 1ex;
+  padding: .25ex .25em !important;
+  border-left: .25em solid var(--structure-color) !important;
+  border-bottom: 0ex !important;
+  font-size: 1.25em !important;
+  font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji" !important;
+  color: var(--structure-color) !important;
+  font-weight: normal !important;
 }
 
 .md-typeset h4 {
-  font-weight: bold !important;
-  font-size: 1rem;
-  color: var(--structure-color);
-}
-
-.subtitle {
-  text-align: center;
-  margin-top: -1ex;
-  margin-bottom: 0;
-  font-family: "Noto Sans";
-  font-size: 0.75rem;
-  font-variation-settings: 'wdth' 62.5;
-  color: var(--margin-color);
-}
-
-/* 一般リスト */
-.md-typeset ul {
-  padding: 0 !important;
-  margin: 0 !important;
-  list-style: none !important;
-}
-.md-typeset ul > li {
-  position: relative;
-
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin-left: 0 !important;
-  padding-left: 2em !important;
-
-  padding-top: 0.75ex;
-  padding-bottom: 0.75ex;
-}
-.md-typeset ul li em {
-  position: absolute;
-  left: 0;
-  top: 0.75ex;
-
-  width: auto;
-  color: var(--structure-color);
-  font-family: "Noto Sans Mono", "Noto Emoji";
-}
-
-/* --- 本文リンクのアニメーション --- */
-.md-typeset a:not(.md-button):not(.md-icon-button) {
-  position: relative;
-  text-decoration: none; /* デフォルトの下線を消す */
-  background-image: linear-gradient(var(--structure-color), var(--structure-color));
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 1px; /* 最初は幅0 */
-  transition: background-size 0.1s;
-}
-.md-typeset a:not(.md-button):not(.md-icon-button):hover {
-  color: var(--univ-color); /* 文字色も少し変えるなら */
-  background-image: linear-gradient(var(--structure-color), var(--structure-color));
-  background-size: 100% 2px; /* 幅100%、太さ2px */
-}
-
-/* --- ボタンのホバーエフェクト --- */
-.md-typeset .md-button:hover {
-  border-color: var(--structure-color) !important;
+  margin-top: 1ex;
+  margin-bottom: 1ex;
+  padding: .25ex .5em !important;
+  font-size: 1em !important;
+  font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji" !important;
   color: var(--structure-color) !important;
-  background-color: transparent !important; /* 背景は抜く */
-  /* ふわっと光る影をつける */
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-weight: bold !important;
 }
 
-/* --- 画像ホバー時の枠線 --- */
-.md-typeset img:hover {
-  transition: transform 0.1s, border-color 0.1s;
-
-  transform: translateY(-2px);
-  border: 2px solid var(--structure-color);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.md-typeset h5 {
+  margin-top: .5ex;
+  margin-bottom: .5ex;
+  padding: .25ex .5em !important;
+  font-size: 1em !important;
+  color: var(--structure-color) !important;
+  font-weight: bold !important;
+  text-transform: none !important; /* Materialの自動大文字化を防ぐ */
 }
 
-/* ボタン */
-.md-button--primary {
-  color: var(--paper-color) !important;
-  border-color: var(--structure-color) !important;
-  background-color: var(--structure-color) !important;
+/* --- 区切り線 --- */
+.md-typeset hr {
+  border-bottom: 1px dashed gray !important;
+  display: flow-root; /* おまじない */
 }
 
-.md-typeset .md-button {
-  padding-top: 0.5ex !important;
-  padding-bottom: 0.5ex !important;
-  padding-left: 1em !important;
-  padding-right: 1em !important;
-
-  border-radius: 8px !important;
+/* --- 段落 --- */
+.md-typeset p {
+  margin-top: 0ex;
+  margin-bottom: .5ex;
+  padding: 0ex .5em;
 }
 
-.md-typeset .grid {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+/* --- リスト --- */
+.md-typeset ul,
+.md-typeset ol {
+  margin-top: 0ex;
+  margin-bottom: .25ex;
+}
+/* 入れ子リストの調整 */
+.md-typeset ul ul:first-child, .md-typeset ul ol:first-child,
+.md-typeset ol ul:first-child, .md-typeset ol ol:first-child {
+  margin-top: .25ex;
+}
+.md-typeset ul ul:last-child, .md-typeset ul ol:last-child,
+.md-typeset ol ul:last-child, .md-typeset ol ol:last-child {
+  margin-bottom: .25ex;
 }
 
+/* --- テーブル --- */
+.md-typeset table:not([class]) {
+  margin-top: .5ex;
+  margin-bottom: .5ex;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border-top: .25mm solid var(--text-color);
+  border-bottom: .25mm solid var(--text-color);
+  table-layout: fixed;
+  display: table !important; /* Materialのblock表示を解除 */
+}
+
+.md-typeset table:not([class]) th {
+  padding: .25ex 2mm;
+  border-bottom: .25mm solid var(--text-color);
+  text-align: center !important;
+  font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji" !important;
+  color: var(--structure-color) !important;
+  background-color: var(--box-color);
+  border-top: none !important;
+  font-weight: bold;
+}
+
+.md-typeset table:not([class]) tr:nth-child(2n+1) td {
+  background: var(--paper-color);
+}
+.md-typeset table:not([class]) tr:nth-child(2n) td {
+  background: var(--box-color);
+}
+
+.md-typeset table:not([class]) td {
+  padding: .25ex 2mm;
+  text-align: center;
+  font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji";
+  color: var(--text-color);
+  border-bottom: none !important; /* Materialの罫線を消す */
+  border-top: none !important;
+}
+
+/* --- 強調・装飾 --- */
 .md-typeset em {
   font-style: normal;
   font-weight: bold;
   color: var(--structure-color);
 }
-
 .md-typeset strong {
   font-style: normal;
   font-weight: bold;
+  color: var(--alert-color);
+}
+.md-typeset i {
+  font-family: "Noto Sans Regular", sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* --- リンク --- */
+.md-typeset a {
+  text-decoration: underline;
+  color: var(--structure-color); /* リンク色も明示的に指定 */
+}
+.md-typeset a:hover {
+  color: var(--alert-color); /* ホバー時の色変化（任意） */
+}
+
+/* --- 画像・動画 --- */
+.md-typeset img,
+.md-typeset video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* --- 引用 (Blockquote) --- */
+.md-typeset blockquote {
+  margin: 1ex 2mm !important;
+  padding: .5ex 2mm .25ex 2mm !important;
+  border-radius: 0mm;
+  border-left: .25em solid var(--structure-color) !important;
+  border-right: .25em solid var(--box-color); /* 元CSSの再現 */
+  background-color: var(--box-color) !important;
+  color: var(--text-color) !important;
+}
+/* 引用の中のコードブロック背景調整 */
+.md-typeset blockquote code {
+  background-color: var(--box-color);
+}
+
+/* --- コードブロック & インラインコード --- */
+
+/* インラインコード */
+.md-typeset :not(pre) > code {
+  padding: 0ex .25em;
+  font-family: "Roboto Mono", "Noto Sans JP", "Noto Emoji" !important;
+  color: var(--alert-color) !important;
+  background-color: var(--middle-color) !important;
+  border-radius: 0; /* Materialの角丸を消す */
+}
+
+/* コードブロック (pre) */
+.md-typeset pre {
+  margin-top: 1ex;
+  margin-bottom: 1ex;
+  padding: .25ex 1mm;
+  background-color: var(--paper-color) !important; /* Box-colorから修正 */
+  line-height: 1.25;
+  color: var(--text-color) !important;
+  border: .25mm solid var(--text-color) !important;
+  border-radius: 0;
+}
+.md-typeset pre > code {
+  font-family: "Roboto Mono", "Noto Sans JP", "Noto Emoji" !important;
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* --- 数式 (MathJax / KaTeX) --- */
+.md-typeset mjx-container[display="true"],
+.md-typeset .katex {
+  padding-top: 1ex;
+  padding-bottom: 1ex;
+  font-size: 1.1em;
+}
+
+/* --- キャプション --- */
+.md-typeset figcaption {
+  caption-side: bottom;
+  margin-bottom: 1ex;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: .75rem;
+  color: var(--text-color);
+  display: block;
+}
+
+/* --- コメント --- */
+.md-typeset .comment {
+  border-top: 1px dashed var(--comment-color);
   color: var(--comment-color);
 }

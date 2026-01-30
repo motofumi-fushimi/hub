@@ -6,14 +6,14 @@
 /* 研究室用に改変
 元ファイルは%LOCALAPPDATA%/Programs/Microsoft VS Code/resources/app/extensions/markdown-language-features/media/markdown.css */
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:bold,boldItalic|Noto+Serif:regular,italic|Roboto+Mono:regular|Noto+Sans+JP:regular,bold|Noto+Serif+JP:medium,bold|Noto+Emoji');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:bold,boldItalic|Noto+Serif:regular,italic|Roboto+Mono:regular|Noto+Sans+JP:regular,bold|Noto+Serif+JP:medium,bold|Noto+Emoji');
 
 :root {
   --normal-size: 10.0878pt; /* 11pt option of LaTeX Beamer */
-  --text-color: #1a1a1a; /* Default text color */
+  --text-color: #1A1A1A; /* Default text color */
   --box-color: #E6E6E6; /* Default box color */
   --middle-color: #F3F3F3; /* Intermediate box color */
-  --paper-color: #ffffff; /* Default paper color */
+  --paper-color: #FFFFFF; /* Default paper color */
   --structure-color: #001E62; /* Keio blue */
   --alert-color: #C63527; /* Keio red */
   --comment-color: #F1C400; /* Keio yellow */
