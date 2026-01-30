@@ -3788,54 +3788,63 @@
   <h1>スライド テンプレート</h1>
 
 <style>
-  /* 1. H1タイトルを非表示 */
+  /* 1. タイトルを隠す */
   .md-typeset h1 { display: none; }
 
-  /* 2. 親要素(.md-content)のFlexboxルールを上書き 【今回の核心】 */
-  /* html bodyをつけることで、website.cssよりも優先順位を最強にします */
+  /* 2. 親要素(.md-content)の設定 */
+  /* website.css に負けないよう html body をつけます */
   html body .md-content {
-    /* 【重要】これを入れないとFlexboxの子要素は縮小できず、はみ出します */
-    min-width: 0 !important;
+    /* Flexboxレイアウトを有効化し、中身を枠内に強制的に収めます */
+    display: flex !important;
+    flex-direction: column !important;
 
-    /* 左メニューの隣に寄せるためのリセット */
+    /* 余計なマージン・パディングを削除 */
     margin: 0 !important;
     padding: 0 !important;
 
-    /* 幅制限の完全解除 */
-    width: auto !important;
+    /* 幅の制限を解除（ただし親グリッドの最大幅には従う） */
     max-width: none !important;
-    display: block !important; /* Flex挙動による予期せぬ隙間も排除 */
+    width: auto !important;
+    min-width: 0 !important; /* 縮小を許可 */
   }
 
-  /* 3. 中身(.md-content__inner)のリセット */
+  /* 3. 中身(.md-content__inner)の設定 */
   html body .md-content__inner {
-    /* ここも最小幅0にして縮小可能にする */
-    min-width: 0 !important;
+    /* 幅を固定せず(auto)、親に合わせて伸縮させる */
+    width: auto !important;
+    max-width: 100% !important;
+
+    /* 余白を削除 */
     margin: 0 !important;
     padding: 0 !important;
-    width: 100% !important;
+
+    /* ここもFlexboxにして中身(iframe)を広げる */
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
   }
 
-  /* 4. website.cssのpタグ余白を無効化 */
+  /* 4. pタグのパディングを消去 */
   html body .md-content__inner p {
     padding: 0 !important;
     margin: 0 !important;
+    display: flex !important; /* pタグもFlexコンテナ化 */
+    flex-direction: column !important;
+    width: 100% !important;
   }
 </style>
 
-<div style="width: 100%; overflow: hidden;">
-  <iframe
-    src="../slidedeck.html"
-    style="
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      outline: 1px solid #ccc;
-      display: block;
-      box-sizing: border-box; /* 枠線を含めたサイズ計算にする */
-    "
-  ></iframe>
-</div>
+<p><iframe
+  src="../slidedeck.html"
+  style="
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    outline: 1px solid #ccc;
+    display: block;
+  "
+></iframe>
+</p>
 
 
 
