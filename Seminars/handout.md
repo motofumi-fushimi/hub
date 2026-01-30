@@ -7,7 +7,7 @@ headingDivider: 1
 paginate: true
 ---
 
-# 輪講資料 テンプレート
+# ハンドアウト テンプレート
 
 <!-- _footer: 第N回○○会議（yyyy年MM月dd日） -->
 <div class="author">伏見 幹史</div>
