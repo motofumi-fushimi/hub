@@ -9,7 +9,8 @@ hide:
   .md-content__inner {
     margin-left: 0;
     margin-right: auto;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
   }
 </style>
 
