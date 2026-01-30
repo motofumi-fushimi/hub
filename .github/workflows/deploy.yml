@@ -1,0 +1,58 @@
+name: Deploy Hub
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # --- 1. 環境セットアップ ---
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs dependencies
+        run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-exclude
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      # --- 2. MarpスライドのHTML化処理 ---
+      # ■ 変更点: --theme-set オプションを追加してカスタムCSSを読み込ませる
+      - name: Build Marp Slides
+        run: |
+          echo "Scanning project root for Marp slides..."
+          # 隠しファイルとnode_modulesを除外して検索
+          find . -type f -name "*.md" -not -path '*/.*' | while read file; do
+            if grep -q "marp: true" "$file"; then
+              echo "Processing slide: $file"
+
+              # Assets/Styles/ 以下の全CSSをテーマセットとして渡します
+              npx @marp-team/marp-cli "$file" --html --allow-local-files --theme-set Assets/Styles/*.css
+
+            fi
+          done
+
+      # --- 3. MkDocsビルド & デプロイ ---
+      - name: Build MkDocs Site
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: public

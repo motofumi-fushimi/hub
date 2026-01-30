@@ -1,0 +1,370 @@
+/*!
+ * @theme slidedeck
+ * @author Motofumi Fushimi
+ *
+ * @auto-scaling true
+ */
+
+@import '~github-markdown-css';
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:regular,bold,italic,boldItalic|Roboto+Mono:regular|Noto+Sans+JP:regular,bold|Noto+Emoji');
+
+:root {
+    --normal-size: 10.0878pt; /* 11pt option of LaTeX Beamer */
+    --text-color: #1A1A1A; /* Default text color */
+    --box-color: #E6E6E6; /* Default box color */
+    --middle-color: #F3F3F3; /* Intermediate box color */
+    --paper-color: #ffffff; /* Default paper color */
+    --structure-color: #001E62; /* Keio blue */
+    --alert-color: #C63527; /* Keio red */
+    --comment-color: #F1C400; /* Keio yellow */
+}
+
+section {
+    display: block;
+    height: 90mm; /* Reproducing LaTeX Beamer's default */
+    width: 160mm; /* Reproducing LaTeX Beamer's default */
+    place-content: safe center center;
+    align-content: start;
+    font-family: "Noto Sans JP", "Noto Sans", "Noto Emoji";
+    font-size: var(--normal-size);
+    color: var(--text-color);
+    background-color: var(--paper-color);
+
+    /* Definitions for classic behavior: Users can adopt flex centering by tweaking style `section { display: flex }` */
+    flex-flow: column nowrap;
+    align-items: stretch;
+
+    > *:last-child,
+    &[data-footer] > :nth-last-child(2) {
+        margin-bottom: 0;
+    }
+
+    /* Page numbers */
+    &::after {
+        position: absolute;
+        padding: 0;
+        right: 4mm;
+        bottom: .5ex;
+        font-size: x-small;
+        color: var(--paginate-color);
+        content: attr(data-marpit-pagination)" / "attr(data-marpit-pagination-total);
+    }
+}
+
+/* Lead pages */
+section.lead {
+    display: block;
+}
+section.lead h3 {
+    margin-top: 0mm;
+    margin-bottom: 2mm;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: .5ex;
+    padding-bottom: .5ex;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--paper-color);
+    background-color: var(--structure-color);
+}
+
+/* Comment pages */
+section.comment {
+    color: var(--comment-color);
+}
+section.comment ul {
+    margin-top: 1ex;
+    padding-top: .5ex;
+    padding-bottom: .5ex;
+}
+
+/* Author, affiliation */
+.author, .affiliation, .date {
+    text-align: center;
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+    color: var(--text-color);
+}
+.author, .affiliation, .date {
+    font-size: 1rem;
+}
+
+/* Slide title */
+h1 {
+    text-align: center;
+    margin-left: 4mm;
+    margin-right: 4mm;
+    margin-top: 4ex;
+    margin-bottom: 2ex;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: 1.5ex;
+    padding-bottom: 1.5ex;
+    border-radius: 2mm;
+    font-size: x-large;
+    color: var(--paper-color);
+    background-color: var(--structure-color);
+}
+
+/* Section titles */
+h2 {
+    text-align: center;
+    margin-left: 4mm;
+    margin-right: 4mm;
+    margin-top: 16mm;
+    margin-bottom: 16mm;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1ex;
+    padding-bottom: 1ex;
+    border-radius: 2mm;
+    font-size: 1.5em;
+    color: var(--paper-color);
+    background-color: var(--structure-color);
+}
+
+/* Frame titles */
+h3 {
+    margin-top: 0mm;
+    margin-bottom: 4mm;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: .5ex;
+    padding-bottom: .5ex;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--structure-color);
+    background-color: var(--box-color);
+}
+
+/* Frame sections */
+h4 {
+    margin-top: 0ex;
+    margin-bottom: .25ex;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: 0ex;
+    padding-bottom: 0ex;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: var(--structure-color);
+}
+
+/* Paragraphs */
+p {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+    padding-left: 4mm;
+    padding-right: 4mm;
+    padding-top: 0ex;
+    padding-bottom: 0ex;
+    line-height: 1.25;
+}
+
+/* Multi-column contents */
+.flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 1mm;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+/* Subscripts and superscripts */
+sub, sup {
+    line-height: 0;
+}
+
+/* Lists */
+ul, ol {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+    padding-right: 4mm;
+    line-height: 1.25;
+}
+ul li::marker, ol li::marker {
+  font-weight: bold;
+  color: var(--structure-color);
+}
+li {
+    margin-top: 0ex;
+    margin-bottom: .5ex;
+}
+ul ul, ol ol {
+    margin-top: .5ex;
+}
+
+/* Tables */
+table {
+    margin-top: 2ex;
+    margin-bottom: 2ex;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-top-style: solid;
+    border-top-width: .25mm;
+    border-top-color: var(--text-color);
+    border-bottom-style: solid;
+    border-bottom-width: .25mm;
+    border-bottom-color: var(--text-color);
+    table-layout: fixed;
+    display: table;
+}
+thead th {
+    padding-top: .25ex;
+    padding-bottom: .25ex;
+    padding-left: 2mm;
+    padding-right: 2mm;
+    border-bottom-style: solid;
+    border-bottom-width: .25mm;
+    border-bottom-color: var(--text-color);
+    text-align: center;
+    color: var(--structure-color);
+    background-color: var(--box-color);
+}
+tbody tr:nth-child(2n+1) {
+    background: var(--paper-color);
+}
+tbody tr:nth-child(2n) {
+    background: var(--middle-color);
+}
+tbody td {
+    padding-left: 2mm;
+    padding-right: 2mm;
+    padding-top: .25ex;
+    padding-bottom: .25ex;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Quotes */
+blockquote {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    margin-left: 4mm;
+    margin-right: 4mm;
+    padding-top: 1ex;
+    padding-bottom: .25ex;
+    border-radius: 2mm;
+    background-color: var(--box-color);
+}
+
+/* Equations */
+mjx-container[display="true"] {
+    padding-top: 1ex;
+    padding-bottom: .25ex;
+    font-size: 1.1em;
+}
+.katex {
+    padding-top: 1ex;
+    padding-bottom: .25ex;
+    font-size: 1.1em;
+}
+
+/* Emphasized contents */
+em {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--structure-color);
+}
+strong {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--alert-color);
+}
+
+/* Italics */
+i {
+    font-family: "Noto Sans";
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+/* Links */
+a {
+    /* text-decoration: none; */
+    text-decoration: underline;
+}
+
+/* Images and videos */
+img, video {
+    background-color: transparent;
+}
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Codes */
+code {
+    padding: 0mm;
+    font-family: "Roboto Mono", "Noto Sans JP", "Noto Emoji";
+    color: var(--text-color);
+    background-color: var(--middle-color);
+}
+pre {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    margin-left: 4mm;
+    margin-right: 4mm;
+    padding-top: .5ex;
+    padding-bottom: .5ex;
+    padding-left: 2mm;
+    padding-right: 2mm;
+    border-radius: 2mm;
+    background-color: var(--box-color);
+    line-height: 1.25;
+    tab-size: 4;
+    overflow: visible;
+    color: var(--text-color);
+    background-color: var(--paper-color);
+    border: .25mm solid var(--text-color);
+}
+pre code {
+    tab-size: 4;
+    color: var(--text-color);
+    background: none;
+}
+.hljs-keyword {
+    color: #0e00ff;
+}
+.hljs-string {
+    color: #a709f5;
+}
+.hljs-comment {
+    color: #008013;
+    font-style: normal;
+}
+
+/* Citations */
+cite {
+    font-style: normal;
+    font-weight: normal;
+    font-size: .75em;
+    color: var(--text-color);
+}
+
+/* Captions */
+figcaption {
+    caption-side: bottom;
+    margin-right: 4mm;
+    margin-left: 4mm;
+    margin-bottom: 1ex;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: .75em;
+    color: var(--text-color);
+}
+
+mark {
+    background-color: var(--comment-color);
+    color: inherit;
+}
+
+/* Comments */
+.comment {
+    color: var(--comment-color);
+}

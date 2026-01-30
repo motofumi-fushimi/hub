@@ -1,0 +1,45 @@
+site_name: Hub
+site_url: https://motofumi-fushimi.github.io/hub/
+repo_url: https://github.com/motofumi-fushimi/hub
+
+# ルートディレクトリをソースにする
+docs_dir: .
+
+# 出力先を "_site" に変更
+# (デフォルトの "site" だと、ルートに含まれるため無限ループエラーになることがあります。
+#  アンダースコアで始まるフォルダはMkDocsによって無視されるため安全です)
+site_dir: _site
+
+# UIテーマ設定
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs        # 上部にタブメニューを表示
+    - navigation.top         # 「トップに戻る」ボタン
+  palette:
+    primary: indigo          # 研究室らしいネイビー系
+    accent: yellow           # アクセントカラー
+
+# MkDocs全体に適用するCSS
+extra_css:
+  - Assets/Styles/website.css
+
+# 階層構造を自動処理するためのプラグイン
+plugins:
+  - search
+  - awesome-pages            # ディレクトリ構造＝メニュー構造にする
+  - exclude:
+      glob:
+        - "Local/**/*"       # ローカルのドラフトフォルダを除外
+        - ".vscode/**/*"     # VSCode設定を除外
+        - ".github/**/*"     # GitHub設定を除外
+        - ".gitignore"       # 設定ファイルは出さない
+        - "mkdocs.yml"       # 自分自身を除外
+        - "readme.md"        # GitHub用の説明はサイトに出さない
+
+# Markdownの拡張機能（必要に応じて）
+markdown_extensions:
+  - admonition               # note, warningなどの警告表示
+  - pymdownx.superfences     # コードブロックの強化
+  - attr_list                # 画像サイズ調整など
