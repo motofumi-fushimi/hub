@@ -5,48 +5,38 @@ hide:
 ---
 
 <style>
-  /* 1. タイトルを隠す */
+  /* 1. H1タイトルを非表示 */
   .md-typeset h1 { display: none; }
 
-  /* 2. 親要素(.md-content)のリセット 【ここが重要！】 */
-  /* これまでここをリセットしていなかったため、中央寄せが残っていました */
-  .md-content {
-    /* 中央寄せ(auto)を解除して左詰めにする */
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  /* 2. 親要素(.md-content)のFlexboxルールを上書き 【今回の核心】 */
+  /* html bodyをつけることで、website.cssよりも優先順位を最強にします */
+  html body .md-content {
+    /* 【重要】これを入れないとFlexboxの子要素は縮小できず、はみ出します */
+    min-width: 0 !important;
 
-    /* 余計なパディングを消す */
+    /* 左メニューの隣に寄せるためのリセット */
+    margin: 0 !important;
     padding: 0 !important;
 
-    /* 幅の制限をなくす */
-    max-width: none !important;
+    /* 幅制限の完全解除 */
     width: auto !important;
-
-    /* Flexboxの子供として、余ったスペースを全部埋める設定 */
-    flex-grow: 1 !important;
-    display: block !important;
+    max-width: none !important;
+    display: block !important; /* Flex挙動による予期せぬ隙間も排除 */
   }
 
-  /* 3. 子要素(.md-content__inner)のリセット */
-  .md-content__inner {
-    /* 親と同じく制限解除 */
+  /* 3. 中身(.md-content__inner)のリセット */
+  html body .md-content__inner {
+    /* ここも最小幅0にして縮小可能にする */
+    min-width: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
-    max-width: none !important;
   }
 
-  /* 4. website.css の pタグの余白(padding: 0 .5em)を無効化 */
-  /* ここが残っていると width:100% と喧嘩してはみ出します */
-  .md-typeset p {
+  /* 4. website.cssのpタグ余白を無効化 */
+  html body .md-content__inner p {
     padding: 0 !important;
     margin: 0 !important;
-  }
-
-  /* 5. グリッド自体のはみ出し防止保険 */
-  .md-grid {
-    /* 万が一のために */
-    max-width: var(--md-content-width) !important;
   }
 </style>
 
@@ -59,6 +49,7 @@ hide:
       border: none;
       outline: 1px solid #ccc;
       display: block;
+      box-sizing: border-box; /* 枠線を含めたサイズ計算にする */
     "
   ></iframe>
 </div>
