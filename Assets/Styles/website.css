@@ -38,7 +38,7 @@
   color: var(--paper-color);
 }
 
-.md-header .md-grid, .md-tabs .md-grid, .md-main .md-grid, .md-footer__inner {
+.md-header .md-grid, .md-tabs .md-grid, .md-footer__inner {
   max-width: var(--md-content-width) !important;
   margin-right: auto;
   margin-left: auto;
@@ -46,11 +46,6 @@
 }
 .md-main .md-grid {
   display: block !important;
-}
-.md-content {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: 0 !important;
 }
 
 /* ヘッダー */
