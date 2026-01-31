@@ -29,6 +29,12 @@
         ".m": "matlab",
         ".pages": "yaml"
     },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.github": true,
+        "**/.idx": true,
+        "**/.vscode": true,
+    },
     // extensions
     "extensions.ignoreRecommendations": true,
     // git
