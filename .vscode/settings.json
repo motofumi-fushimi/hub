@@ -1,5 +1,44 @@
 {
-    "markdown.styles": [
+    //////////////////// Basic Settings ////////////////////
+    // editor
+    "editor.fontFamily": "'Noto Sans Mono', 'Noto Sans JP', 'Noto Emoji'",
+    "editor.codeLensFontFamily": "'Noto Sans', 'Noto Sans JP', 'Noto Emoji'",
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "editor.wrappingIndent": "same",
+    "editor.autoIndent": "keep",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    // terminal
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.commandsToSkipShell": [
+        "matlab.interrupt"
+    ],
+    // explorer
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.sortOrder": "type",
+    // files
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.saveConflictResolution": "overwriteFileOnDisk",
+    "files.associations": {
+        ".m": "matlab",
+        ".pages": "yaml"
+    },
+    // extensions
+    "extensions.ignoreRecommendations": true,
+    // git
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    //////////////////// Extension Settings ////////////////////
+    // Markdown
+    "markdown.extension.list.indentationSize": "inherit",
+        "markdown.styles": [
         "Assets/Styles/notebook.css"
     ],
     "markdown.marp.themes": [
@@ -9,11 +48,6 @@
     ],
     "markdown.marp.breaks": "off",
     "markdown.marp.html": "all",
-    "markdownlint.config": {
-        "MD001": false,
-        "MD025": false,
-        "MD041": false,
-    },
     "markdown.extension.katex.macros": {
         "\\td": "\\mathrm{d}",
         "\\fd": "\\mathrm{\\Delta}",
@@ -93,6 +127,133 @@
         "\\eqannot": "\\color{##C63527}\\underset{\text{\textsf{#1}}}{\\underline{{\\color{##1a1a1a}#2}}}\\color{##1a1a1a}",
         "\\eqcolor": "\\color{##C63527}#1\\color{##1a1a1a}"
     },
+    // LaTeX Workshop
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "latex-workshop.hover.preview.newcommand.newcommandFile": "D:/OneDrive - The University of Tokyo/Configurations/vscode/commands.sty",
+    "latex-workshop.intellisense.unimathsymbols.enabled": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.hand": true,
+    "latex-workshop.view.pdf.zoom": "page-width",
+    "latex-workshop.view.pdf.spreadMode": 0,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.bcf",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.ilg",
+        "*.run.xml",
+        "*.fdb_latexmk"
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "platex",
+            "command": "ptex2pdf",
+            "args": [
+                "-shell-escape",
+                "-l",
+                "-ot",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "uplatex",
+            "command": "ptex2pdf",
+            "args": [
+                "-shell-escape",
+                "-u",
+                "-l",
+                "-ot",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pbibtex",
+            "command": "pbibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "upbibtex",
+            "command": "upbibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "makeindex",
+            "command": "makeindex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "upmendex",
+            "command": "upmendex",
+            "args": [
+                "-g",
+                "-d ./index.dic",
+                "%DOCFILE%"
+            ]
+        }
+    ],
     // "latex-workshop.latex.recipes": [
     //     {
     //     "name": "lualatex*2",

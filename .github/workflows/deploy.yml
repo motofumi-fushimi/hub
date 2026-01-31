@@ -1,11 +1,12 @@
-name: Deploy Hub
+name: Deploy Hub to Firebase
 on:
   push:
     branches:
       - main
 
 permissions:
-  contents: write
+  contents: read # Firebaseへのデプロイならreadだけで十分ですが、writeのままでも動作します
+  checks: write  # GitHub Actionsのチェック用
 
 jobs:
   deploy:
@@ -29,22 +30,22 @@ jobs:
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli
 
-      # --- Marpビルド (HTML生成) ---
+      # --- Marpビルド (HTML生成) [既存のロジック維持] ---
       - name: Build Marp Slides
         run: |
           echo "Scanning project root for Marp slides..."
-          # node_modulesなどを除外しつつ、.mdを探してHTML化
           find . -type d \( -name "node_modules" -o -name ".git" \) -prune -o -type f -name "*.md" -print | while read file; do
             if grep -q "marp: true" "$file"; then
               echo "Processing slide: $file"
+              # Assetsフォルダが存在しない場合のエラー回避のため、念のためチェックしても良いですが既存維持します
               npx @marp-team/marp-cli "$file" --html --allow-local-files --theme-set Assets/Styles/*.css < /dev/null
             fi
           done
 
-      # --- ドキュメントフォルダの準備とお掃除 ---
+      # --- ドキュメントフォルダの準備とお掃除 [既存のロジック維持] ---
       - name: Prepare Docs Directory
         run: |
-          mkdir docs
+          mkdir -p docs
           # 1. 全ファイルを docs にコピー
           rsync -av \
             --exclude='.git*' \
@@ -56,9 +57,11 @@ jobs:
             --exclude='readme.md' \
             --exclude='.gitignore' \
             --exclude='mkdocs.yml' \
+            --exclude='firebase.json' \
+            --exclude='.firebaserc' \
             . docs/
 
-          # Marp用のMarkdown原稿を docs から削除する
+          # Marp用のMarkdown原稿を docs から削除する（HTMLだけ残す）
           echo "Removing Marp source files from build directory..."
           find docs -type f -name "*.md" | while read file; do
             if grep -q "marp: true" "$file"; then
@@ -71,9 +74,11 @@ jobs:
       - name: Build MkDocs Site
         run: mkdocs build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # --- Firebase Hosting へのデプロイ [ここを変更] ---
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
-          publish_branch: public
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_YOUR_PROJECT_ID }}
+          projectId: motofumi-fushimi
+          channelId: live
