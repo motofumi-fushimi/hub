@@ -76,6 +76,7 @@
   /* 2. 最後の要素を右に飛ばし、垂直方向の真ん中に配置 */
   .md-tabs__item:last-child {
     margin-left: auto;
+    margin-right: 1em !important;
     display: flex;
     align-items: center; /* 上下の真ん中に来るように調整 */
   }
